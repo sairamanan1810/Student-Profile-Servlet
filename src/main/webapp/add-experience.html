@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="css/view_prof.css" />
   <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="signup.css"/>
   <title>View Profile</title>
 </head>
 
@@ -51,6 +52,8 @@
       <i class="fa fa-code" aria-hidden="true"></i> Add any Internship /
       Project / Journals that you have done it
     </p>
+    <div id="errors">
+    </div>
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
@@ -64,21 +67,21 @@
     </div>
     <div class="internship-form" id="internship-form" style="display:block">
       <p class="lead mt-3">Internship Details:</p>
-      <form class="form">
+      <form class="form" onsubmit="return validate('internship');" method="get" action="">
         <div class="form-group">
-          <input type="text" placeholder="* Project Title" name="title" required="" value=""Project/>
+          <input type="text" placeholder="Project Title" name="intern_title" value=""/>
         </div>
         <div class="form-group">
-          <input type="text" placeholder="* Company" name="company" required="" value="" />
+          <input type="text" placeholder="Company" name="intern_company" value="" />
         </div>
         <div class="form-group">
-          <input type="text" placeholder="Role" name="role" value="" />
+          <input type="text" placeholder="Role" name="intern_role" value="" />
         </div>
         <div class="form-group">
-          <input type="text" placeholder="Duration" name="duration" value="" />
+          <input type="text" placeholder="Duration" name="intern_duration" value="" />
         </div>
         <div class="form-group">
-          <textarea name="description" cols="30" rows="5" placeholder="Project Description"></textarea>
+          <textarea name="intern_description" cols="30" rows="5" placeholder="Project Description"></textarea>
         </div>
         <input type="submit" class="btn btn-primary my-1" />
         <a class="btn my-1" href="DashBoard.html">Go Back</a>
@@ -86,18 +89,19 @@
     </div>
     <div class="project-form" id="project-form" style="display:none">
       <p class="lead mt-3">Project Details:</p>
-      <form class="form">
+      <form class="form" onsubmit="return validate('project');" method="get" action="">
         <div class="form-group">
-          <input type="text" placeholder="* Project Title" name="title" required="" value="" />
+          <input type="text" placeholder="Project Title" name="project_title"  value="" />
+          <small class="form-text">Enter project title</small>
         </div>
         <div class="form-group">
-          <input type="text" placeholder="Duration" name="duration" required="" value="" />
+          <input type="text" placeholder="Duration" name="project_duration" value="" />
         </div>
         <div class="form-group">
-          <input type="text" placeholder="Tools" name="tools" value="" />
+          <input type="text" placeholder="Tools" name="project_tools" value="" />
         </div>
         <div class="form-group">
-          <textarea name="description" cols="30" rows="5" placeholder="Description"></textarea>
+          <textarea name="project_description" cols="30" rows="5" placeholder="Description"></textarea>
         </div>
         <input type="submit" class="btn btn-primary my-1" />
         <a class="btn my-1" href="DashBoard.html">Go Back</a>
@@ -105,18 +109,19 @@
     </div>
     <div class="journal-form" id="journal-form" style="display:none">
       <p class="lead mt-3">Journal Details:</p>
-      <form class="form">
+      <form class="form" onsubmit="return validate('journal');" method="get" action="">
         <div class="form-group">
-          <input type="text" placeholder="* Title" name="title" required="" value="" />
+          <input type="text" placeholder="Title" name="journal_title"  value="" />
+          <small class="form-text">Enter Journal Title</small>
         </div>
         <div class="form-group">
-          <input type="text" placeholder="Duration" name="duration" required="" value="" />
+          <input type="text" placeholder="Duration" name="journal_duration"  value="" />
         </div>
         <div class="form-group">
-          <input type="text" placeholder="* Publication" name="publication" required="" value="" />
+          <input type="text" placeholder="Publication" name="journal_publication"  value="" />
         </div>
         <div class="form-group">
-          <textarea name="description" cols="30" rows="5" placeholder="Description"></textarea>
+          <textarea name="journal_description" cols="30" rows="5" placeholder="Description"></textarea>
         </div>
         <input type="submit" class="btn btn-primary my-1" />
         <a class="btn my-1" href="DashBoard.html">Go Back</a>
@@ -131,6 +136,50 @@
       document.getElementById('journal-form').style.display = 'none';
       document.getElementById(exp).style.display = 'block';
       document.getElementById('dropdownMenuButton').innerText=text;
+    }
+    function validate(type){
+      if (type === 'journal') {
+        var title = document.getElementsByName('journal_title')[0].value;
+        var duration = document.getElementsByName('journal_duration')[0].value;
+        var publication = document.getElementsByName('journal_publication')[0].value;
+        var description = document.getElementsByName('journal_description')[0].value;
+        var check = false;
+        var errortag=document.getElementById('errors');
+        errortag.innerHTML="";
+        errortag.style.display='none';
+
+        if (title === "") {
+          var li=document.createElement('li');
+          li.innerHTML = "Title cannot be empty";
+          errortag.appendChild(li);
+          check = true;
+        }
+        if (duration === "") {
+          var li=document.createElement('li');
+          li.innerHTML = "Duration cannot be empty";
+          errortag.appendChild(li);
+          check = true;
+        }
+        if (publication === "") {
+          var li=document.createElement('li');
+          li.innerHTML = "Publication cannot be empty";
+          errortag.appendChild(li);
+          check = true;
+        }
+        if (description.length < 10) {
+          var li=document.createElement('li');
+          li.innerHTML = "Description should be minimum of 10 characters";
+          errortag.appendChild(li);
+          check = true;
+        }
+      }
+      
+      
+      if (check === false) {
+        return true
+      }
+      errortag.style.display='block';
+      return false;
     }
   </script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
