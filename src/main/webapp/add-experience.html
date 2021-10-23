@@ -1,80 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/view_prof.css">
-    <link rel="stylesheet" href="css/dashboard.css">  
-    <title>View Profile</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/view_prof.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <title>View Profile</title>
 </head>
+
 <body>
   <!-- Navbar -->
   <div>
     <nav class="navbar bg-first navbar-expand-sm fixed-top">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="DashBoard.html">
-          <img src="assets/amrita-logo.jpg" alt="" width="40" height="40" class="d-inline-blocks">
-          <h1 class="d-inline-block align-middle ml-2"><strong>ASP</strong></h1>
-        </a>
-        <div class="collapse navbar-collapse" id="Navbar">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="View_profile.html"><span class="fa fa-users fa-lg"></span> Profiles</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="DashBoard.html"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html"><span class="fa fa-sign-out fa-lg"></span> Logout</a>
-            </li>
-          </ul>
-        </div>
-     </nav>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="DashBoard.html">
+        <img src="assets/amrita-logo.jpg" alt="" width="40" height="40" class="d-inline-blocks" />
+        <h1 class="d-inline-block align-middle ml-2"><strong>ASP</strong></h1>
+      </a>
+      <div class="collapse navbar-collapse" id="Navbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="View_profile.html"><span class="fa fa-users fa-lg"></span> Profiles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="DashBoard.html"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><span class="fa fa-sign-out fa-lg"></span> Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
   <!-- Add Experience -->
   <section class="container">
-      <h1 class="large text-primary">Add Accomplishments</h1>
-      <p class="lead"><i class="fa fa-code" aria-hidden="true"></i> Add any developer/programming positions that you have had in the past</p>
-      <small>* = required field</small>
+    <h1 class="large text-primary">Add Accomplishments</h1>
+    <p class="lead">
+      <i class="fa fa-code" aria-hidden="true"></i> Add any Internship /
+      Project / Journals that you have done it
+    </p>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Internship
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" onclick="showExperience('internship-form','Internship')">Internship</a>
+        <a class="dropdown-item" onclick="showExperience('project-form','Project')">Project</a>
+        <a class="dropdown-item" onclick="showExperience('journal-form','Journal')">Journal</a>
+      </div>
+    </div>
+    <div class="internship-form" id="internship-form" style="display:block">
+      <p class="lead mt-3">Internship Details:</p>
       <form class="form">
-          <div class="form-group">
-              <input type="text" placeholder="* Job Title" name="title" required="" value="">
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="* Company" name="company" required="" value="">
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Location" name="location" value="">
-            </div>
-            <div class="form-group">
-                <h4>From Date</h4>
-                <input type="date" name="from" value="">
-            </div>
-            <div class="form-group">
-                <p><input type="checkbox" name="current" value="false"> Current Job</p>
-            </div>
-            <div class="form-group">
-                <h4>To Date</h4>
-                <input type="date" name="to" value="">
-            </div>
-            <div class="form-group">
-                <textarea name="description" cols="30" rows="5" placeholder="Job Description"></textarea>
-            </div>
-            <input type="submit" class="btn btn-primary my-1">
-            <a class="btn my-1" href="DashBoard.html">Go Back</a>
-        </form>
-    </section>
+        <div class="form-group">
+          <input type="text" placeholder="* Project Title" name="title" required="" value=""Project/>
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="* Company" name="company" required="" value="" />
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Role" name="role" value="" />
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Duration" name="duration" value="" />
+        </div>
+        <div class="form-group">
+          <textarea name="description" cols="30" rows="5" placeholder="Project Description"></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary my-1" />
+        <a class="btn my-1" href="DashBoard.html">Go Back</a>
+      </form>
+    </div>
+    <div class="project-form" id="project-form" style="display:none">
+      <p class="lead mt-3">Project Details:</p>
+      <form class="form">
+        <div class="form-group">
+          <input type="text" placeholder="* Project Title" name="title" required="" value="" />
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Duration" name="duration" required="" value="" />
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Tools" name="tools" value="" />
+        </div>
+        <div class="form-group">
+          <textarea name="description" cols="30" rows="5" placeholder="Description"></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary my-1" />
+        <a class="btn my-1" href="DashBoard.html">Go Back</a>
+      </form>
+    </div>
+    <div class="journal-form" id="journal-form" style="display:none">
+      <p class="lead mt-3">Journal Details:</p>
+      <form class="form">
+        <div class="form-group">
+          <input type="text" placeholder="* Title" name="title" required="" value="" />
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Duration" name="duration" required="" value="" />
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="* Publication" name="publication" required="" value="" />
+        </div>
+        <div class="form-group">
+          <textarea name="description" cols="30" rows="5" placeholder="Description"></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary my-1" />
+        <a class="btn my-1" href="DashBoard.html">Go Back</a>
+      </form>
+    </div>
 
+  </section>
+  <script>
+    function showExperience(exp,text) {
+      document.getElementById('internship-form').style.display = 'none';
+      document.getElementById('project-form').style.display = 'none';
+      document.getElementById('journal-form').style.display = 'none';
+      document.getElementById(exp).style.display = 'block';
+      document.getElementById('dropdownMenuButton').innerText=text;
+    }
+  </script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
