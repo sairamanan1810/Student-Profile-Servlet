@@ -1,20 +1,20 @@
 body {
     padding-top: 100px;
-    overflow: hidden;
-  }
+}
 
-.login-h1 {
+.signup-h1 {
     color:rgb(221, 155, 32);
     
     margin-bottom: 1rem;
 }
 
-.login{
+.signUp{
     height: 100%;
     padding: 0;
     margin:auto;
     width: 60%;
 }
+
 #errors{
 	display:none;
 	margin:auto;

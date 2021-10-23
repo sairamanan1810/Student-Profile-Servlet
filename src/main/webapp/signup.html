@@ -10,7 +10,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/signup.css"/>
+  <link rel="stylesheet" href="signup.css"/>
   <link rel="stylesheet" href="css/style.css"/>
   <title>ASP Login</title>
 </head>
@@ -41,31 +41,37 @@
   </nav>
 
   <div class="signUp">
-      <h1 class="signup-h1">Sign Up</h1>
-      <h3><span class="fa fa-user-plus fa-lg"></span> Create Your Account</h3></br>
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Name"/>
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Email Address"/>
-      </div>
-      Student <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck">
-      Advisor <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"><br>
-      <div class="form-group" id="ifStudent" style="visibility:hidden">
-        <input type="text" class="form-control" placeholder="Roll Number"/>
-      </div>
-      <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password">
-      </div>
-      <div class="form-group">
-        <input type="password" class="form-control" placeholder="Confirm Password">
-      </div>
-      <div class="button">
-        <input type="submit" class="btn btn-second mr-1" value="Register"/>
-      </div><br>
+      <h6 class="signup-h1 text-center"><span class="fa fa-user-plus fa-lg"></span>Sign Up</h6>
+     
+      
+      
+	      <div id="errors">
+	      <li>hellooo</li>
+	      </div>
+	      <div class="form-group">
+	        <input type="text" class="form-control" id="name" name="name" placeholder="Name"/>
+	      </div>
+	      <div class="form-group">
+	        <input type="text" class="form-control" id="email" name="email" placeholder="Email Address"/>
+	      </div>
+	      Student <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck">
+	      Faculty <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"><br>
+	      <div class="form-group" id="ifStudent" style="display:none;">
+	        <input type="text" class="form-control" id="roll_no" name="roll_no" placeholder="Roll Number"/>
+	      </div>
+	      <div class="form-group">
+	        <input type="password" id="pwd" name="pwd" class="form-control" placeholder="Password">
+	      </div>
+	      <div class="form-group">
+	        <input type="password" id="conf_pwd" name="conf_pwd" class="form-control" placeholder="Confirm Password">
+	      </div>
+	      <div class="button">
+	        <Button type="submit" class="btn btn-second mr-1" onclick="validate()">Register</Button>
+	      </div><br>
+      
       <div class="sign-up">Already Have an Account?<span><a href="login.html" style="color: rgb(250, 193, 86);"> SignIn</a></span></div>
   </div>
-  <script src="js/signup.js"></script>
+  <script src="signup.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
