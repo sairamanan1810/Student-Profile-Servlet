@@ -1,6 +1,8 @@
 package myCode;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class add_accomplishments_servlet
+ * Servlet implementation class Project_details
  */
-@WebServlet("/add_accomplishments_servlet")
-public class add_accomplishments_servlet extends HttpServlet {
+@WebServlet("/Project_details")
+public class Project_details extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public add_accomplishments_servlet() {
+    public Project_details() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,7 +37,15 @@ public class add_accomplishments_servlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		String title = request.getParameter("project_title");
+		String duration = request.getParameter("project_duration");
+		String tools = request.getParameter("project_tools");
+		String description = request.getParameter("project_description");
+		out.println(title+','+duration+','+tools+','+description);
+		out.close();
 	}
 
 }

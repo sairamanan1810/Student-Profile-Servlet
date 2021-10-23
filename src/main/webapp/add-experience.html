@@ -67,7 +67,7 @@
     </div>
     <div class="internship-form" id="internship-form" style="display:block">
       <p class="lead mt-3">Internship Details:</p>
-      <form class="form" onsubmit="return validate('internship');" method="get" action="">
+      <form class="form" onsubmit="return validate('internship');" method="post" action="http://localhost:8080/Student-Portal/Internship_details">
         <div class="form-group">
           <input type="text" placeholder="Project Title" name="intern_title" value=""/>
         </div>
@@ -89,7 +89,7 @@
     </div>
     <div class="project-form" id="project-form" style="display:none">
       <p class="lead mt-3">Project Details:</p>
-      <form class="form" onsubmit="return validate('project');" method="get" action="">
+      <form class="form" onsubmit="return validate('project');" method="post" action="http://localhost:8080/Student-Portal/Project_details">
         <div class="form-group">
           <input type="text" placeholder="Project Title" name="project_title"  value="" />
           <small class="form-text">Enter project title</small>
@@ -109,7 +109,7 @@
     </div>
     <div class="journal-form" id="journal-form" style="display:none">
       <p class="lead mt-3">Journal Details:</p>
-      <form class="form" onsubmit="return validate('journal');" method="get" action="">
+      <form class="form" onsubmit="return validate('journal');" method="post" action="http://localhost:8080/Student-Portal/Journal_details">
         <div class="form-group">
           <input type="text" placeholder="Title" name="journal_title"  value="" />
           <small class="form-text">Enter Journal Title</small>
