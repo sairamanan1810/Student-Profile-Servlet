@@ -48,51 +48,65 @@
       <h1 class="large text-primary">Create Your Profile</h1>
       <p class="lead"><i class="fa fa-heart" aria-hidden="true"></i> Let's get some information about you</p>
       <small>* = Required Fields</small>
-      <form class="form" action="DashBoard.html">
-          <div class="form-group">
-                <select name="status">
-                  <option value="0">* Select Professional Status</option>
-                  <option value="Developer">Developer</option>
-                  <option value="Junior Developer">Junior Developer</option>
-                  <option value="Senior Developer">Senior Developer</option>
-                  <option value="Manager">Manager</option>
-                  <option value="Student or Learning">Student or Learning</option>
-                  <option value="Instructor">Instructor or Teacher</option>
-                  <option value="Intern">Intern</option><option value="Other">Other</option>
-                </select>
-                <small class="form-text">Give us an idea of where you are at in your career</small>
+      <form class="form" action="DashBoard.html" onsubmit="return validateFormOnSubmit(this)">
+            <div class="form-group">
+              <input type="text" placeholder="Roll number" name="roll_no" value="" required>
+              <small class="form-text">Enter your Roll Number</small>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" placeholder="Name" name="name" value="" required>
+                <small class="form-text">Enter your Name</small>
             </div>
             <div class="form-group">
-                <input type="text" placeholder="Company" name="company" value="None">
-                <small class="form-text">Could be your own company or one you work for</small>
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Website" name="website" value="">
-                <small class="form-text">Could be your own or a company website</small>
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Location" name="location" value="">
+                <input type="text" placeholder="Location" name="location" value="" required>
                 <small class="form-text">City &amp; state suggested (eg. Boston, MA)</small>
             </div>
             <div class="form-group">
-                <input type="text" placeholder="* Skills" name="skills" value="js">
+              <input type="text" placeholder="Photo" name="photo" value="" required>
+              <small class="form-text">Provide the link for your avatar photo</small>
+          </div>
+            <div class="form-group">
+                <input type="text" placeholder="* Skills" name="skills" value="js" required>
                 <small class="form-text">Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)</small>
             </div>
             <div class="form-group">
-                <input type="text" placeholder="Github Username" name="githubusername" value="">
-                <small class="form-text">If you want your latest repos and a Github link, include your username</small>
-            </div>
-            <div class="form-group">
-                <textarea placeholder="A short bio of yourself" name="bio">
+                <textarea placeholder="A short bio of yourself" name="bio" required>
                 </textarea><small class="form-text">Tell us a little about yourself</small>
             </div>
             <div class="my-2">
-                <button type="button" class="btn btn-light">Add Social Network Links</button>
+                <button type="button" class="btn btn-light" onclick="socialMedia()">Add Social Network Links</button>
                 <span>Optional</span>
+            </div>
+            <div class="social-media-buttons" style="display: none;">
+            <div class="form-group">
+              <i class="fa fa-github" aria-hidden="true"></i>
+              <input type="text" placeholder="Github URL" name="github" />
+            </div>
+            <div class="form-group social-input">
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+              <input type="text" placeholder="Email ID" name="email" />
+            </div>
+            <div class="form-group social-input">
+              <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+              <input type="text" placeholder="Linkedin URL" name="linkedin" />
+            </div>
+
             </div>
             <input type="submit" class="btn btn-primary my-1">
             <a class="btn btn-light my-1" href="DashBoard.html">Go Back</a>
         </form>
     </section>
+  <script>
+
+    function socialMedia() {
+      var socialbtn = document.getElementsByClassName('social-media-buttons');
+      if (socialbtn[0].style.display ===  'none') {
+        socialbtn[0].style.display = 'block';
+      } else {
+        socialbtn[0].style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
