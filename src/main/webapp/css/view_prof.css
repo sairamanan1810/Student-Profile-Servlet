@@ -1,0 +1,69 @@
+.about,.skill_set,.experience,.accomplishments{
+    position: relative;
+    margin:auto;
+    padding:20px;
+    width:80%;
+    padding:0px;
+}
+.internships,.projects,.journals{
+    margin:auto;
+    padding:20px;
+    width:70%;
+    padding:0px;
+}
+.projects,.journals{
+    display: none;
+}
+#interns_head {
+    color: black;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+#project_head,#journal_head {
+    color:black;
+}
+.about{
+    margin-top: 15vh;
+    background-color: rgb(221, 155, 32);
+    padding:4vh;
+}
+.skill_set{
+    background-color: rgb(230, 223, 223);
+    padding:3vh;
+}
+.skill_set div{
+    display: block;
+    justify-content: center;
+}
+.experience{
+    box-sizing: border-box;   
+    padding:0px;
+}
+.experience div{
+    padding:10px;
+    width:100%;
+}
+.nav_in{
+    margin: 0;
+    background-color:rgb(230, 223, 223);
+    width:100%;
+    padding:10px;
+}
+.nav_in .col-2{
+    font-size: large;
+    color:rgb(221, 155, 32);display:flex;align-items: center;justify-content: center;
+}
+.nav_in .col-2 a{
+    cursor: pointer;
+    color:white;
+}
+.nav_in .col-2 a:hover{
+    font-weight: bolder;
+    color:white;
+    text-decoration: underline;
+}
+.intern_component{
+    background-color: rgb(230, 223, 223);
+    padding:20px;
+}
+

@@ -1,0 +1,77 @@
+h1 {
+    font-size: 2rem;
+}
+
+body {
+    font-family: 'Montserrat', 'Raleway', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+  }
+
+.bg-first{
+    background-color: rgb(29, 21, 11);
+}
+.bg-second{
+    background-color: rgb(221, 155, 32);
+}
+
+.text-first{
+    color:rgb(29, 21, 11);
+}
+
+.text-second{
+    color:rgb(221, 155, 32);
+}
+
+nav a, nav{
+    color: rgb(221, 155, 32);
+}
+
+.navbar, .navbar ul {
+    display: flex;
+}
+
+.navbar{
+    align-items: center;
+    justify-content: space-between;
+    padding: .3rem 3rem;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    border-bottom: 2px solid rgb(221, 155, 32);
+    opacity: .9;
+}
+
+.navbar a:hover {
+    color: rgb(250, 193, 86);
+  }
+
+.btn {
+    border-radius: 0;
+}
+
+.btn-second , .btn-second:hover{
+    background-color: rgb(221, 155, 32);
+    color: #fff ;
+}
+
+.large {
+    font-size: 3rem;
+}
+
+.large, .x-large {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.container {
+    margin-top: 6rem;
+}

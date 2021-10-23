@@ -1,0 +1,18 @@
+body {
+    padding-top: 100px;
+    overflow: hidden;
+}
+
+.signup-h1 {
+    color:rgb(221, 155, 32);
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.signUp{
+    overflow: auto;
+    height: 100%;
+    padding: 0;
+    margin-left:13%;
+    width: 60%;
+}

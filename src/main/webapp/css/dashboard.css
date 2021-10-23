@@ -1,0 +1,62 @@
+.text-primary {
+    color:#b88017 !important;
+}
+.large {
+    font-size: 3rem;
+}
+.large, .x-large {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+.lead {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.btn {
+    display: inline-block;
+    background: #f4f4f4;
+    color: #333;
+    padding: .4rem 1.3rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: .5rem;
+    outline: none;
+    transition: all .2s ease-in;
+}
+.margin-2 {
+    margin: 2rem 0 !important;
+}
+.btn:hover {
+    background: #786762;
+    color: #fff;
+}
+.table th {
+    background: #f4f4f4;
+}
+.table td, .table th {
+    padding: 1rem;
+    text-align: left;
+}
+.form-group {
+    margin: 1.2rem 0;
+}
+.form-text {
+    display: block;
+    margin-top: .3rem;
+    color: #888;
+}
+.my-2 {
+    margin: 2rem 0;
+}
+.btn.btn-primary {
+    background-color: #b88017;
+    color: #fff;
+}
+.form input[type=date], .form input[type=email], .form input[type=password], .form input[type=text], .form select, .form textarea {
+    display: block;
+    width: 100%;
+    padding: .4rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+}

@@ -1,0 +1,62 @@
+body{
+    padding-top:68px;
+}
+img{
+    margin: 0;
+    width:80%;
+}
+.sideNavA{
+    color:rgb(221, 155, 32);
+    cursor: pointer;
+    font-size: large;
+}
+.sideNavA:hover{
+    text-decoration: underline;
+    color:rgb(221, 155, 32);
+    font-weight: bolder;
+}
+.faculty,.classes,.create_class_form{
+    display: none;
+}
+.faculty,.student,.classes{
+    padding:5vh;
+}
+.faculty h3,.student h3,.classes h3{
+    padding: 4vh;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+table{
+    border: 2px solid grey;
+}
+.form{
+    /* margin: auto;
+    width:60%; */
+    column-gap: 5vh;
+}
+.form div select,.create_class_form select{
+    height:5vh;
+    border-radius: 10px;
+    width: 100%;
+    padding:5px;
+}
+.form div button,.create_class_form button{
+    border-radius: 10px;
+}
+.create_class_form{
+    margin: auto;
+    width: 80%;
+    background-color: rgb(230, 223, 223);
+    border: 2px solid rgb(230, 223, 223);
+    border-radius: 5vh;
+    padding:4vh;
+}
+.create_class_form h6{
+    font-weight: bolder;
+    text-decoration: underline;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 2px;
+    font-size: large;
+}
+
