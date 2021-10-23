@@ -34,7 +34,7 @@ function validate(){
 			errortag.appendChild(li)
 		}
 	}
-	console.log(!dict['Roll_Num'] , dict['is_Student'])
+	console.log(document.getElementById('roll_no').value)
 	if(!dict['is_Student'] && !dict['is_Faculty']){
 			var li=document.createElement('li')
 			li.innerHTML="Student/Faculty checkbox field is Required"
