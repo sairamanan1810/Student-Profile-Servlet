@@ -80,13 +80,13 @@ public class login_servlet extends HttpServlet {
 	        	else {
 	        		request.getRequestDispatcher("/FacultyDashBoard.html").forward(request, response);
 	        	}
-	        	st.close();
-	            con.close();
+	        	
 	        }	
 	        }
 	        request.getRequestDispatcher("/login.html").include(request, response);
 	        // Close all the connections
-        
+	        st.close();
+            con.close();
 		}
 		catch(Exception e) {
 			e.printStackTrace();
