@@ -2,6 +2,8 @@ package myCode;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,10 +34,29 @@ public class Project_details extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		response.setContentType("text/html");
-		String name=request.getParameter("name");
-		String email=request.getParameter("email");
-		String roll_no=request.getParameter("roll_no");
-		String pwd=request.getParameter("pwd");
+		String title=request.getParameter("project_title");
+		String duration=request.getParameter("project_duration");
+		String tools=request.getParameter("project_tools");
+		String description=request.getParameter("project_description");
+		String sql="Insert Into project(student_id,title,duration,tools,description) Values (?,?,?,?,?)";
+		try {
+			Connection con = JDBC_connection.initializedatabase();
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, (String)request.getSession().getAttribute("id"));
+			st.setString(2, title);
+			st.setString(3, tools);
+	        st.setString(4, duration);
+	        st.setString(5, description);
+	        
+	        st.executeUpdate();
+
+	        // Close all the connections
+	        st.close();
+	        con.close();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**

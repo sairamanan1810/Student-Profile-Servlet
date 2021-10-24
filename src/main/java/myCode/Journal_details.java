@@ -2,6 +2,8 @@ package myCode;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,6 +47,24 @@ public class Journal_details extends HttpServlet {
 		String publication = request.getParameter("journal_publication");
 		String description = request.getParameter("journal_description");
 		out.println(title+','+duration+','+publication+','+description);
+		String sql="Insert Into journals(title,duration,publication,description,student_id) Values (?,?,?,?,?)";
+		try {
+			Connection con = JDBC_connection.initializedatabase();
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, title);
+	        st.setString(2, duration);
+	        st.setString(3, publication);
+	        st.setString(4, description);
+	        st.setString(5, (String)request.getSession().getAttribute("id"));
+	        st.executeUpdate();
+
+	        // Close all the connections
+	        st.close();
+	        con.close();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		out.close();
 	}
 

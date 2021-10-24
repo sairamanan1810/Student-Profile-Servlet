@@ -2,6 +2,8 @@ package myCode;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -43,9 +45,27 @@ public class Internship_details extends HttpServlet {
 		String title = request.getParameter("intern_title");
 		String duration = request.getParameter("intern_duration");
 		String company = request.getParameter("intern_company");
-		String role = request.getParameter("intern_role");
+		//String role = request.getParameter("intern_role");
 		String description = request.getParameter("intern_description");
-		out.println(title+','+duration+','+company+','+role+','+description);
+		out.println(title+','+duration+','+company+','+description);
+		String sql="Insert Into internship(student_id,company_name,duration,project_title,project_description) Values (?,?,?,?,?)";
+		try {
+			Connection con = JDBC_connection.initializedatabase();
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, (String)request.getSession().getAttribute("id"));
+	        st.setString(2, company);
+	        st.setString(3, duration);
+	        st.setString(4, title);
+	        st.setString(5, description);
+	        st.executeUpdate();
+
+	        // Close all the connections
+	        st.close();
+	        con.close();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		out.close();
 	}
 
