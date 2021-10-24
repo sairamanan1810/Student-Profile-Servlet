@@ -69,11 +69,13 @@ public class signup_servlet extends HttpServlet {
         // Execute the insert command using executeUpdate()
         // to make changes in database
         st.executeUpdate();
+        request.setAttribute("name", name);
         if(opt.equals("no")) {
-        	request.getRequestDispatcher("/dashBoardInitial.html").forward(request, response);
+        	
+        	request.getRequestDispatcher("/dashBoardInitial.jsp").forward(request, response);
     	}
     	else {
-    		request.getRequestDispatcher("/FacultyDashBoard.html").forward(request, response);
+    		request.getRequestDispatcher("/FacultyDashBoard.jsp").forward(request, response);
     	}
         
         // Close all the connections

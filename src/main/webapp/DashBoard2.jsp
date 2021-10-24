@@ -23,17 +23,20 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="FacultyDashBoard.html">
+        <a class="navbar-brand" href="DashBoard.html">
           <img src="assets/amrita-logo.jpg" alt="" width="40" height="40" class="d-inline-blocks">
           <h1 class="d-inline-block align-middle ml-2"><strong>ASP</strong></h1>
         </a>
         <div class="collapse navbar-collapse" id="Navbar">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="./profilesearch.html"><span class="fa fa-users fa-lg"></span> Profiles</a>
+              <a class="nav-link" href="View_profile.html"><span class="fa fa-users fa-lg"></span> Profiles</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./index.html"><span class="fa fa-sign-out fa-lg"></span> Logout</a>
+              <a class="nav-link" href="DashBoard.html"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"><span class="fa fa-sign-out fa-lg"></span> Logout</a>
             </li>
           </ul>
         </div>
@@ -42,27 +45,43 @@
   <!-- Dashboard -->
     <section class="container">
       <h1 class="large text-primary">Dashboard</h1>
-      <p class="lead"><i class="fa fa-user" aria-hidden="true"></i> Welcome S Sneha Latha</p>
+      <p class="lead"><i class="fa fa-user" aria-hidden="true"></i> Welcome ${name}</p>
       <div class="dash-buttons">
-        <a class="btn" href="student_list.html"><i class="fa fa-id-card" aria-hidden="true"></i> Student's List</a>
+        <a class="btn" href="view_profile.html"><i class="fa fa-eye" aria-hidden="true"></i> View Profiles</a>
+        <a class="btn" href="edit-profile.html"><i class="fa fa-id-card" aria-hidden="true"></i> Edit Profile</a>
+        <a class="btn" href="add-education.html"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Add Education</a>
+        <a class="btn" href="add-experience.html"><i class="fa fa-briefcase" aria-hidden="true"></i> Add Accomplishment</a>
+        
       </div>
-      
-    <!-- Request List -->
-    <h2 class="margin-2">List of Request</h2>
+      <!-- Education -->
+    <h2 class="margin-2">Education</h2>
     <table class="table">
       <thead>
         <tr>
-          <th class="hide-sm">Name</th>
-          <th class="hide-sm">Remark</th>
-          <th>Accept/Reject</th>
+          <th>School</th>
+          <th class="hide-sm">Degree</th>
+          <th class="hide-sm">Field Of Study</th>
+          <th>Years</th>
+          <!-- <th></th> -->
         </tr>
       </thead>
-      <tbody>
-          <td>Sai Ramanan</td>
-          <td>Add Certification</td>
-          <td><span><button type="button" class="btn btn-success">Accept</button></span><span><button type="button" class="btn btn-success">Reject</button></span></td>
-      </tbody>
+      <tbody></tbody>
     </table>
+      <!-- Experience -->
+    <h2 class="margin-2">Accomplishments</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Company/Title</th>
+          <th class="hide-sm">Description</th>
+          <th class="hide-sm">Type</th>
+          <th>Duration</th>
+          <!-- <th></th> -->
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    
     <div class="margin-2">
       <button class="btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete My Account</button>
     </div>
