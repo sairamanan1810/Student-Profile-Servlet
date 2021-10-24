@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/view_prof.css"> 
+    <link rel="stylesheet" href="css/dashboard.css"> 
+    <link rel="stylesheet" href="css/errors.css">
+    <title>Set Profile</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <div>
+    <nav class="navbar bg-first navbar-expand-sm fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="DashBoard.html">
+          <img src="assets/amrita-logo.jpg" alt="" width="40" height="40" class="d-inline-blocks">
+          <h1 class="d-inline-block align-middle ml-2"><strong>ASP</strong></h1>
+        </a>
+        <div class="collapse navbar-collapse" id="Navbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="View_profile.html"><span class="fa fa-users fa-lg"></span> Profiles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="DashBoard.html"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"><span class="fa fa-sign-out fa-lg"></span> Logout</a>
+            </li>
+          </ul>
+        </div>
+     </nav>
+  </div>
+
+  <!-- edit-profile -->
+  <section class="container">
+      <h1 class="large text-primary text-center">Create Your Profile</h1>
+      <
+      <small>* Required Fields</small>
+      <div id="errors">
+	      </div>
+      <form class="form" action="http://localhost:8080/Portal/initial_student_details_servlet" onsubmit="return validate();" method="post">
+            <div class="form-group">
+              <input type="text" placeholder="Roll number" name="roll_no" value="" required>
+              <small class="form-text">Enter your Roll Number</small>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" placeholder="Name" name="name" value="" required>
+                <small class="form-text">Enter your Name</small>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Location" name="location" value="" required>
+                <small class="form-text">City &amp; state suggested (eg. Boston, MA)</small>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Photo" name="photo" value="" required>
+              <small class="form-text">Provide the link for your avatar photo</small>
+          </div>
+            <div class="form-group">
+                <input type="text" placeholder="* Skills" name="skills" value="js" required>
+                <small class="form-text">Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)</small>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email ID" name="email" />
+              <small class="form-text">Email ID</small>
+            </div>
+            <div class="my-2">
+                <button type="button" class="btn btn-light" onclick="socialMedia()">Add Social Network Links</button>
+                <span>Optional</span>
+            </div>
+            <div class="social-media-buttons" style="display: none;">
+            <div class="form-group">
+              <i class="fa fa-github" aria-hidden="true"></i>
+              <input type="text" placeholder="Github URL" name="github" />
+            </div>
+            
+            <div class="form-group social-input">
+              <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+              <input type="text" placeholder="Linkedin URL" name="linkedin" />
+            </div>
+			</div>
+			<div class="form-group">
+            <input type="text" placeholder="course" name="course" value="">
+            <small class="form-text">Enter your field of study</small>
+          </div>
+          <div class="form-group">
+            <input type="number" min="1900" max="2021" step="1" value="2021" style="width: 75px;" name='start'/>
+            <small class="form-text">Enter the Joining year of your graduation</small>
+          </div>
+          <div class="form-group">
+            <input type="number" min="1900" max="2025" step="1" value="2025" style="width: 75px;" name="end"/>
+            <small class="form-text">Enter the Passing out year of your graduation</small>
+          </div>
+          <div class="form-group">
+            <select name="status">
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+              <option value="E">E</option>
+            </select>
+            <small class="form-text">Enter your section</small>
+          </div>
+            <div class="form-group">
+                <textarea placeholder="A short bio of yourself" name="bio" rows={5}></textarea>
+                <small class="form-text">Tell us a little about yourself</small>
+            </div>
+            
+            <input type="Submit" class="btn btn-primary my-1">
+            <a class="btn btn-light my-1" href="DashBoard.html">Go Back</a>
+        </form>
+    </section>
+  <script>
+
+    function socialMedia() {
+      var socialbtn = document.getElementsByClassName('social-media-buttons');
+      if (socialbtn[0].style.display ===  'none') {
+        socialbtn[0].style.display = 'block';
+      } else {
+        socialbtn[0].style.display = 'none';
+      }
+    }
+    function validate(){
+    	console.log("hello kid")
+        var photo = document.getElementsByName('bio');
+        var course = document.getElementsByName('course')[0].value;
+        var check = false;
+        var errortag=document.getElementById('errors');
+        errortag.innerHTML="";
+  	    errortag.style.display='none';
+        var txt = photo[0].value;
+        if (course === "" || course === null) {
+        	console.log("hello kid here")
+          var li=document.createElement('li');
+          li.innerHTML = "Course cannot be empty";
+          errortag.appendChild(li);
+          check = true;
+        }
+        if (txt.length < 10) {
+          var li=document.createElement('li');
+          li.innerHTML = "Description should be minimum of 10 characters";
+          errortag.appendChild(li);
+          check = true;
+        }
+        var st = document.getElementsByName('start')[0].value;
+        var en = document.getElementsByName('end')[0].value;
+        
+        if (en < st) {
+          var li=document.createElement('li');
+          li.innerHTML = "Passing out year cannot be before than joining year";
+          errortag.appendChild(li);
+          check = true;
+        }
+        if ( en - st > 5) {
+          var li=document.createElement('li');
+          li.innerHTML = "Difference between joining and passing out year is maximum 5";
+          errortag.appendChild(li);
+          check = true;
+        } 
+        if (check === false) {
+          return true
+        }
+        errortag.style.display='block';
+        return false;
+      }
+  </script>
+</body>
+</html>
