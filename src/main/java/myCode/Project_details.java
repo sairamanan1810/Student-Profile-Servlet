@@ -52,7 +52,7 @@ public class Project_details extends HttpServlet {
 		try {
 			Connection con = JDBC_connection.initializedatabase();
 			PreparedStatement st = con.prepareStatement(sql);
-			st.setString(1, (String)request.getSession().getAttribute("id"));
+			st.setString(1, (String)request.getSession().getAttribute("roll_no"));
 			st.setString(2, title);
 			st.setString(3, tools);
 	        st.setString(4, duration);
@@ -61,6 +61,9 @@ public class Project_details extends HttpServlet {
 	        st.executeUpdate();
 
 	        // Close all the connections
+	        
+	        request.getRequestDispatcher("/add-experience.html").include(request, response);
+	        
 	        st.close();
 	        con.close();
 		}

@@ -69,12 +69,14 @@ public class login_servlet extends HttpServlet {
         // Execute the insert command using executeUpdate()
         // to make changes in database
         ResultSet rs = st.executeQuery();
+        String roll_no;
         
         while(rs.next()) {
-	        
+	        roll_no=rs.getString(5);
 	        if(rs.getString(2).equals(name) && rs.getString(3).equals(password)) {
 	        	session.setAttribute("id",name);
 	        	if(rs.getString(4).equals("Student")) {
+	        		session.setAttribute("roll_no",roll_no);
 	        		request.getRequestDispatcher("/DashBoard.html").forward(request, response);
 	        	}
 	        	else {
