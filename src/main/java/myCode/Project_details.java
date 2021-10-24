@@ -33,11 +33,21 @@ public class Project_details extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//doGet(request, response);
 		response.setContentType("text/html");
-		String title=request.getParameter("project_title");
-		String duration=request.getParameter("project_duration");
-		String tools=request.getParameter("project_tools");
-		String description=request.getParameter("project_description");
+		PrintWriter out = response.getWriter();
+		String title = request.getParameter("project_title");
+		String duration = request.getParameter("project_duration");
+		String tools = request.getParameter("project_tools");
+		String description = request.getParameter("project_description");
+		//out.println(title+','+duration+','+tools+','+description);
 		String sql="Insert Into project(student_id,title,duration,tools,description) Values (?,?,?,?,?)";
 		try {
 			Connection con = JDBC_connection.initializedatabase();
@@ -57,21 +67,6 @@ public class Project_details extends HttpServlet {
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//doGet(request, response);
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		String title = request.getParameter("project_title");
-		String duration = request.getParameter("project_duration");
-		String tools = request.getParameter("project_tools");
-		String description = request.getParameter("project_description");
-		out.println(title+','+duration+','+tools+','+description);
 		out.close();
 	}
 
