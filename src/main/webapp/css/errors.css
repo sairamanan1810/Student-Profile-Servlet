@@ -1,0 +1,13 @@
+#errors{
+	display:none;
+	margin:auto;
+	width:60%;
+	border-radius:10px;	
+	border:2px black solid; 
+	padding:1vw;
+	margin-bottom:20px;
+}
+#errors li{
+	font-weight:bold;
+	color:red;
+}
