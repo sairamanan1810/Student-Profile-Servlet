@@ -6,6 +6,11 @@ function yesnoCheck() {
     else document.getElementById('ifStudent').style.display = 'none';
 }
 
+function rollnoCheck(Num){
+	const re = /^[A-Z]+[A-Z]+.+[A-Z]+[A-Z]+.+[A-Z]+[0-9]+[A-Z]+[A-Z]+[A-Z]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]$/
+  	return re.test(Num);
+}
+
 function validate(){
 	console.log("sai")
 	var dict={}
@@ -34,19 +39,42 @@ function validate(){
 			errortag.appendChild(li)
 		}
 	}
-	console.log(document.getElementById('roll_no').value)
+	console.log()
 	if(!dict['is_Student'] && !dict['is_Faculty']){
+			t=true
 			var li=document.createElement('li')
 			li.innerHTML="Student/Faculty checkbox field is Required"
 			errortag.appendChild(li)	
 	}
 	if(dict['is_Student']){
 		if(!dict['Roll_Num']){
+			t=true
 			var li=document.createElement('li')
 			li.innerHTML="Roll No. checkbox field is Required"
 			errortag.appendChild(li)
 		}
+		else{
+			 if (rollnoCheck(dict['Roll_Num'])) {
+    		 }
+    		 else{
+    		 	t=true
+    			var li=document.createElement('li')
+				li.innerHTML="Enter a valid Roll Number"
+				errortag.appendChild(li)
+    		}
+		}
 	}
+	
+	if(dict['Password']==dict['Confirm Password']){
+		
+	}
+	else{
+		t=true
+		var li=document.createElement('li')
+		li.innerHTML="Confirm password doesn't match"
+		errortag.appendChild(li)
+	}
+	
 if(t){
 	console.log(errortag)
 	errortag.style.display='block'
