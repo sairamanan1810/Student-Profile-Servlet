@@ -55,18 +55,27 @@ public class signup_servlet extends HttpServlet {
 
         // Same for second parameter
         st.setString(2, pwd);
+        String opt="no";
         if(roll_no==null || roll_no=="") {
         	st.setString(3, "Faculty");
         	st.setString(4, null);
+        	opt="yes";
         }
         else {
         st.setString(3, "Student");
         st.setString(4, roll_no);
+        opt="no";
         }
         // Execute the insert command using executeUpdate()
         // to make changes in database
         st.executeUpdate();
-
+        if(opt.equals("no")) {
+        	request.getRequestDispatcher("/dashBoardInitial.html").forward(request, response);
+    	}
+    	else {
+    		request.getRequestDispatcher("/FacultyDashBoard.html").forward(request, response);
+    	}
+        
         // Close all the connections
         st.close();
         con.close();
@@ -74,6 +83,7 @@ public class signup_servlet extends HttpServlet {
 		catch(Exception e) {
 			e.printStackTrace();
 		}
+		
         }
 
 	/**

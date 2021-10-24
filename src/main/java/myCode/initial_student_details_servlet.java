@@ -49,12 +49,12 @@ public class initial_student_details_servlet extends HttpServlet {
 		String github=request.getParameter("github");
 		String linkedin=request.getParameter("linkedin");
 		String email=request.getParameter("email");
-		
+		String section=request.getParameter("status");
 		String course=request.getParameter("course");
 		String start=request.getParameter("start");
 		String end=request.getParameter("end");
 		String bio=request.getParameter("bio");
-		String sql="Insert Into (username,password,role,roll_no) Values (?,?,?,?)";
+		String sql="Insert Into studentdetails (roll_no,name,location,skill_set,linkedin_id,github_id,email_id,photo,bio,joining_year,passout_year,section,course) Values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		try {
 		Connection con = JDBC_connection.initializedatabase();
 		
@@ -65,22 +65,26 @@ public class initial_student_details_servlet extends HttpServlet {
         // For the first parameter,
         // get the data using request object
         // sets the data to st pointer
-        st.setString(1, name);
-
+        st.setString(1, roll_no);
+        st.setString(2, name);
+        st.setString(3, location);
+        st.setString(4, skills);
+        st.setString(5, linkedin);
+        st.setString(6, github);
+        st.setString(7, email);
+        st.setString(8, photo);
+        st.setString(9, bio);
+        st.setString(10, start);
+        st.setString(11, end);
+        st.setString(12, course);
+        st.setString(13, section);
         // Same for second parameter
-        st.setString(2, pwd);
-        if(roll_no==null || roll_no=="") {
-        	st.setString(3, "Faculty");
-        	st.setString(4, null);
-        }
-        else {
-        st.setString(3, "Student");
-        st.setString(4, roll_no);
-        }
+        
+        
         // Execute the insert command using executeUpdate()
         // to make changes in database
         st.executeUpdate();
-
+        request.getRequestDispatcher("/DashBoard.html").forward(request, response);
         // Close all the connections
         st.close();
         con.close();

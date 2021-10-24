@@ -74,7 +74,12 @@ public class login_servlet extends HttpServlet {
 	        
 	        if(rs.getString(2).equals(name) && rs.getString(3).equals(password)) {
 	        	session.setAttribute("id",name);
-	        	request.getRequestDispatcher("/DashBoard.html").forward(request, response);
+	        	if(rs.getString(4).equals("Student")) {
+	        		request.getRequestDispatcher("/DashBoard.html").forward(request, response);
+	        	}
+	        	else {
+	        		request.getRequestDispatcher("/FacultyDashBoard.html").forward(request, response);
+	        	}
 	        	st.close();
 	            con.close();
 	        }	
