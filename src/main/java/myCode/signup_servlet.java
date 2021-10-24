@@ -7,8 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
+import javax.servlet.http.HttpSession;
 
 import java.sql.*;
 import java.util.*;
@@ -69,11 +68,18 @@ public class signup_servlet extends HttpServlet {
         // Execute the insert command using executeUpdate()
         // to make changes in database
         st.executeUpdate();
+        request.setAttribute("name", name);
         if(opt.equals("no")) {
-        	request.getRequestDispatcher("/dashBoardInitial.html").forward(request, response);
+        	HttpSession session=request.getSession();
+        	session.setAttribute("id",name);
+        	session.setAttribute("roll_no",roll_no);
+        	request.getRequestDispatcher("/dashBoardInitial.jsp").forward(request, response);
     	}
     	else {
-    		request.getRequestDispatcher("/FacultyDashBoard.html").forward(request, response);
+    		
+    		HttpSession session=request.getSession();
+        	session.setAttribute("id",name);
+    		request.getRequestDispatcher("/FacultyDashBoard.jsp").forward(request, response);
     	}
         
         // Close all the connections

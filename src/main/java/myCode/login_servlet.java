@@ -69,24 +69,28 @@ public class login_servlet extends HttpServlet {
         // Execute the insert command using executeUpdate()
         // to make changes in database
         ResultSet rs = st.executeQuery();
+        String roll_no;
         
         while(rs.next()) {
-	        
+	        roll_no=rs.getString(5);
 	        if(rs.getString(2).equals(name) && rs.getString(3).equals(password)) {
 	        	session.setAttribute("id",name);
+	        	request.setAttribute("name", name);
 	        	if(rs.getString(4).equals("Student")) {
-	        		request.getRequestDispatcher("/DashBoard.html").forward(request, response);
+					session.setAttribute("roll_no",roll_no);
+	        		request.getRequestDispatcher("/DashBoard2.jsp").forward(request, response);
+	        		
 	        	}
 	        	else {
-	        		request.getRequestDispatcher("/FacultyDashBoard.html").forward(request, response);
+	        		request.getRequestDispatcher("/FacultyDashBoard.jsp").forward(request, response);
 	        	}
-	        	st.close();
-	            con.close();
+	        	
 	        }	
 	        }
 	        request.getRequestDispatcher("/login.html").include(request, response);
 	        // Close all the connections
-        
+	        st.close();
+            con.close();
 		}
 		catch(Exception e) {
 			e.printStackTrace();

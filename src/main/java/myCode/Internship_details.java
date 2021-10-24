@@ -47,21 +47,22 @@ public class Internship_details extends HttpServlet {
 		String company = request.getParameter("intern_company");
 		//String role = request.getParameter("intern_role");
 		String description = request.getParameter("intern_description");
-		out.println(title+','+duration+','+company+','+description);
+		//out.println(title+','+duration+','+company+','+description);
+		//out.println((String)request.getSession().getAttribute("roll_no"));
 		String sql="Insert Into internship(student_id,company_name,duration,project_title,project_description) Values (?,?,?,?,?)";
 		try {
 			Connection con = JDBC_connection.initializedatabase();
 			PreparedStatement st = con.prepareStatement(sql);
-			st.setString(1, (String)request.getSession().getAttribute("id"));
+			st.setString(1, (String)request.getSession().getAttribute("roll_no"));
 	        st.setString(2, company);
 	        st.setString(3, duration);
 	        st.setString(4, title);
 	        st.setString(5, description);
 	        st.executeUpdate();
-
-	        // Close all the connections
+	        
+	        request.getRequestDispatcher("/add-experience.html").include(request, response);
 	        st.close();
-	        con.close();
+            con.close();
 		}
 		catch(Exception e) {
 			e.printStackTrace();
