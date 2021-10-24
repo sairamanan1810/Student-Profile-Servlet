@@ -46,7 +46,7 @@ public class Journal_details extends HttpServlet {
 		String duration = request.getParameter("journal_duration");
 		String publication = request.getParameter("journal_publication");
 		String description = request.getParameter("journal_description");
-		out.println(title+','+duration+','+publication+','+description);
+		//out.println(title+','+duration+','+publication+','+description);
 		String sql="Insert Into journals(title,duration,publication,description,student_id) Values (?,?,?,?,?)";
 		try {
 			Connection con = JDBC_connection.initializedatabase();
@@ -55,10 +55,13 @@ public class Journal_details extends HttpServlet {
 	        st.setString(2, duration);
 	        st.setString(3, publication);
 	        st.setString(4, description);
-	        st.setString(5, (String)request.getSession().getAttribute("id"));
+	        st.setString(5, (String)request.getSession().getAttribute("roll_no"));
 	        st.executeUpdate();
 
 	        // Close all the connections
+	        
+	        request.getRequestDispatcher("/add-experience.html").include(request, response);
+	        
 	        st.close();
 	        con.close();
 		}

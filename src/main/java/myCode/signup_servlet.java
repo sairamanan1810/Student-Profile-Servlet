@@ -7,8 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
+import javax.servlet.http.HttpSession;
 
 import java.sql.*;
 import java.util.*;
@@ -71,10 +70,15 @@ public class signup_servlet extends HttpServlet {
         st.executeUpdate();
         request.setAttribute("name", name);
         if(opt.equals("no")) {
-        	
+        	HttpSession session=request.getSession();
+        	session.setAttribute("id",name);
+        	session.setAttribute("roll_no",roll_no);
         	request.getRequestDispatcher("/dashBoardInitial.jsp").forward(request, response);
     	}
     	else {
+    		
+    		HttpSession session=request.getSession();
+        	session.setAttribute("id",name);
     		request.getRequestDispatcher("/FacultyDashBoard.jsp").forward(request, response);
     	}
         
