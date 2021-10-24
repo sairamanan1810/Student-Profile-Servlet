@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class add_accomplishments_servlet
+ * Servlet implementation class signup_servlet_1
  */
-@WebServlet("/add_accomplishments_servlet")
-public class add_accomplishments_servlet extends HttpServlet {
+@WebServlet("/signup_servlet_1")
+public class signup_servlet_1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public add_accomplishments_servlet() {
+    public signup_servlet_1() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,12 +28,6 @@ public class add_accomplishments_servlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		response.setContentType("text/html");
-		String name=request.getParameter("name");
-		String email=request.getParameter("email");
-		String roll_no=request.getParameter("roll_no");
-		String pwd=request.getParameter("pwd");
 	}
 
 	/**
