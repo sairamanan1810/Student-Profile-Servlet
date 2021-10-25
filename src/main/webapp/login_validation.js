@@ -26,7 +26,7 @@ function validate(){
 	  pwd.innerHTML="Password Field Required"
 	  pwd.style.display='block'
 	t=true
-	  }  
+	  }
 if(t){
 	
 	errortag.style.display='block'

@@ -11,6 +11,12 @@ function rollnoCheck(Num){
   	return re.test(Num);
 }
 
+function CheckPassword(inputtxt) 
+{ 
+	var passw=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+	return passw.test(inputtxt)
+}
+
 function validate(){
 	console.log("sai")
 	var dict={}
@@ -63,6 +69,13 @@ function validate(){
 				errortag.appendChild(li)
     		}
 		}
+	}
+	console.log(!CheckPassword(dict['Password']),"dsfasfd")
+	if (!CheckPassword(dict['Password'])) {
+		t=true
+		var li=document.createElement('li')
+		li.innerHTML="Password should be between 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter."
+		errortag.appendChild(li)
 	}
 	
 	if(dict['Password']==dict['Confirm Password']){
