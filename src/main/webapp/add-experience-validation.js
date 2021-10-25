@@ -114,6 +114,7 @@ function showExperience(exp,text) {
     
     
     if (check === false) {
+      alert('Experience Added Successfully');
       return true
     }
     errortag.style.display='block';

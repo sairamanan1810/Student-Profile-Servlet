@@ -23,14 +23,13 @@ function validate(){
 	   
 	}
 	if(password==null || password==""){    
-	  pwd.innerHTML="Password Field Required"
-	  pwd.style.display='block'
-	t=true
-	  }
-if(t){
-	
-	errortag.style.display='block'
-	return false;
-	
-}
+	  	pwd.innerHTML="Password Field Required"
+	  	pwd.style.display='block'
+		t=true
+	}
+	if(t){
+		errortag.style.display='block'
+		return false;
+	}
+	alert('Successfully logged in');
 }

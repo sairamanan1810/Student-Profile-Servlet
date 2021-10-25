@@ -94,4 +94,5 @@ if(t){
 	return false;
 	
 }
+alert('Account created successfully');
 }
