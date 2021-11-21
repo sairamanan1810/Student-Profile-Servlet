@@ -62,19 +62,21 @@
               </div>
               <div class="col py-3 faculty" >
                 <center><h3>FACULTIES</h3></center>
+                <form action="faculty_table_filter" method="post">
                 <div class="row mx-auto form">
                   <div class="col-6">
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
-                      <option selected>Department</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-sm example" name="dept">
+                      <option selected value="%">Department</option>
+                      <option value="cse">CSE</option>
+                      <option value="eee">EEE</option>
+                      <option value="mee">MEE</option>
                     </select>
                   </div>
                   <div class="col-3">
-                    <button type="button" class="btn btn-outline-success">Submit</button>
+                    <button type="submit" class="btn btn-outline-success">Submit</button>
                   </div>
                 </div>
+                </form>
                   <table class="table table-striped">
                     <thead>
                       <tr>
