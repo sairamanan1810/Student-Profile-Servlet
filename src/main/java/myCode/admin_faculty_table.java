@@ -47,18 +47,24 @@ public class admin_faculty_table extends HttpServlet {
         
         
 	        	
-	        		ArrayList<ArrayList<String> > student_array= new ArrayList<ArrayList<String> >();
+	        		ArrayList<ArrayList<String> > faculty_array= new ArrayList<ArrayList<String> >();
 	        		System.out.println("Hello");
-	        		String sql_next="Select name,roll_no,course,section,joining_year from studentdetails";
+	        		String sql_next="Select * from facultydetails";
 	        		PreparedStatement st_next = con.prepareStatement(sql_next);
 	        		ResultSet rs_next = st_next.executeQuery();
 	        		
 	        		while(rs_next.next()) {
-	        			student_array.add(new ArrayList<String>(Arrays.asList(rs_next.getString(1),rs_next.getString(2),rs_next.getString(3),rs_next.getString(4),String.valueOf(rs_next.getString(5)))));
+	        			String sql_two="Select email from logincredentials where login_id=?";
+		        		PreparedStatement st_two = con.prepareStatement(sql_two);
+		        		st_two.setString(1,rs_next.getString(2));
+		        		ResultSet rs_two = st_two.executeQuery();
+		        		rs_two.next();
+		        		faculty_array.add(new ArrayList<String>(Arrays.asList(rs_next.getString(3),rs_next.getString(4),rs_two.getString(1))));
 	        		}
-	        		request.setAttribute("list_table", student_array);
 	        		
-	        		request.getRequestDispatcher("/admin_page.jsp").forward(request, response);	
+	        		request.setAttribute("list_table", faculty_array);
+	        		
+	        		request.getRequestDispatcher("/admin_page_facultyTable.jsp").forward(request, response);	
 	       
 	        	
 	        

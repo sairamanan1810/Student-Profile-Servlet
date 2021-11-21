@@ -15,7 +15,7 @@ img{
     color:rgb(221, 155, 32);
     font-weight: bolder;
 }
-.faculty,.classes,.create_class_form{
+.create_class_form{
     display: none;
 }
 .faculty,.student,.classes{

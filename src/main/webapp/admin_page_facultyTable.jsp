@@ -48,10 +48,10 @@
                             <a class="nav-link sideNavA" href="admin_student_table"><span class="fa fa-long-arrow-right fa-lg"></span> Student List</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link sideNavA" href="admin_faculty_table"><span class="fa fa-long-arrow-right fa-lg"></span> Faculty List</a>
+                            <a class="nav-link sideNavA"  href="admin_faculty_table"><span class="fa fa-long-arrow-right fa-lg"></span> Faculty List</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link sideNavA"  href="./admin_create_classes.jsp" ><span class="fa fa-long-arrow-right fa-lg"></span> ASP Classes</a>
+                            <a class="nav-link sideNavA" href="./admin_create_classes.jsp" ><span class="fa fa-long-arrow-right fa-lg"></span> ASP Classes</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link sideNavA" href="./index.html" ><span class="fa fa-sign-out fa-lg"></span> Logout</a>
@@ -60,43 +60,32 @@
                       <hr>
                   </div>
               </div>
-              
-              <div class="col py-3 student" >
-                <center><h3>STUDENTS</h3></center>
+              <div class="col py-3 faculty" >
+                <center><h3>FACULTIES</h3></center>
                 <div class="row mx-auto form">
-                    <div class="col-4">
-                      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                        <option selected>JOINED ON</option>
-                        <option value="1">2018</option>
-                        <option value="2">2019</option>
-                        <option value="3">2020</option>
-                      </select>
-                    </div>
-                    <div class="col-4">
-                      <select class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
-                        <option selected>Department</option>
-                        <option value="1">CSE</option>
-                        <option value="2">ECE</option>
-                        <option value="3">MEE</option>
-                      </select>
-                    </div>
-                    <div class="col-3">
-                      <button type="button" class="btn btn-outline-success">Submit</button>
-                    </div>
+                  <div class="col-6">
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
+                      <option selected>Department</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                  <div class="col-3">
+                    <button type="button" class="btn btn-outline-success">Submit</button>
+                  </div>
                 </div>
                   <table class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Roll Number</th>
                         <th scope="col">Department</th>
-                        <th scope="col">Section</th>
-                        <th scope="col">Year Of Joining</th>
+                        <th scope="col">Mail Id</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <c:forEach var="list" items="${list_table}" varStatus="movieLoopCount">
+	                    <c:forEach var="list" items="${list_table}" varStatus="movieLoopCount">
 					        <tr>
 					            <th scope="row">${movieLoopCount.count}</th>     
 					        
@@ -111,11 +100,7 @@
                     </tbody>
                   </table>
               </div>
-
               
-          </div>
-      </div>
-
       </div>
       </div>
       <script src="js/admin_page.js"></script>
