@@ -86,17 +86,8 @@ public class login_servlet extends HttpServlet {
 	        		request.getRequestDispatcher("/FacultyDashBoard.jsp").forward(request, response);
 	        	}
 	        	else {
-	        		ArrayList<ArrayList<String> > student_array= new ArrayList<ArrayList<String> >();
-	        		System.out.println("Hello");
-	        		String sql_next="Select name,roll_no,course,section,joining_year from studentdetails";
-	        		PreparedStatement st_next = con.prepareStatement(sql_next);
-	        		ResultSet rs_next = st_next.executeQuery();
 	        		
-	        		while(rs_next.next()) {
-	        			student_array.add(new ArrayList<String>(Arrays.asList(rs_next.getString(1),rs_next.getString(2),rs_next.getString(3),rs_next.getString(4),String.valueOf(rs_next.getString(5)))));
-	        		}
-	        		request.setAttribute("list_table", student_array);
-	        		request.getRequestDispatcher("/admin_page.jsp").forward(request, response);	
+	        		request.getRequestDispatcher("/admin_student_table").forward(request, response);	
 	        	}
 	        	
 	        }	

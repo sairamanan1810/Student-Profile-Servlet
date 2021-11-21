@@ -45,10 +45,10 @@
                             <img src="assets/profile.png" alt="hugenerd" width="105" height="105" class="rounded-circle align-middle"><br><br>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link sideNavA" onclick="change_list('student')" href="#"><span class="fa fa-long-arrow-right fa-lg"></span> Student List</a>
+                            <a class="nav-link sideNavA" onclick="change_list('student')" href="admin_student_table"><span class="fa fa-long-arrow-right fa-lg"></span> Student List</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link sideNavA" onclick="change_list('faculty')" href="#"><span class="fa fa-long-arrow-right fa-lg"></span> Faculty List</a>
+                            <a class="nav-link sideNavA" onclick="change_list('faculty')" href="admin_faculty_table"><span class="fa fa-long-arrow-right fa-lg"></span> Faculty List</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link sideNavA" onclick="change_list('classes')" href="#" ><span class="fa fa-long-arrow-right fa-lg"></span> ASP Classes</a>
@@ -88,12 +88,14 @@
 	                    <c:forEach var="list" items="${list_table}" varStatus="movieLoopCount">
 					        <tr>
 					            <th scope="row">${movieLoopCount.count}</th>     
-					        </tr>
-					        <c:forEach var="details" items="${list}">
-					            <tr>
+					        
+					        	<c:forEach var="details" items="${list}">
+					            
 					                <td>${details}</td>
-					            </tr>
-					        </c:forEach>
+					                
+					            </c:forEach>
+					         </tr>
+					        
 				    	</c:forEach>
                     </tbody>
                   </table>

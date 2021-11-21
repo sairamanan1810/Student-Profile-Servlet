@@ -39,7 +39,7 @@ public class signup_servlet extends HttpServlet {
 		String email=request.getParameter("email");
 		String roll_no=request.getParameter("roll_no");
 		String pwd=request.getParameter("pwd");
-		String sql="Insert Into logincredentials(username,password,role,roll_no) Values (?,?,?,?)";
+		String sql="Insert Into logincredentials(username,password,role,roll_no,email) Values (?,?,?,?,?)";
 		try {
 		Connection con = JDBC_connection.initializedatabase();
 		
@@ -65,6 +65,7 @@ public class signup_servlet extends HttpServlet {
         st.setString(4, roll_no);
         opt="no";
         }
+        st.setString(5, email);
         // Execute the insert command using executeUpdate()
         // to make changes in database
         st.executeUpdate();
@@ -79,7 +80,8 @@ public class signup_servlet extends HttpServlet {
     		
     		HttpSession session=request.getSession();
         	session.setAttribute("id",name);
-    		request.getRequestDispatcher("/FacultyDashBoard.jsp").forward(request, response);
+        	session.setAttribute("email",email);
+    		request.getRequestDispatcher("/initialFaculty_details.jsp").forward(request, response);
     	}
         
         // Close all the connections
