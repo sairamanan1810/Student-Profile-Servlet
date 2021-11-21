@@ -26,7 +26,7 @@
         </button>
         <a class="navbar-brand" href="DashBoard.html">
           <img src="assets/amrita-logo.jpg" alt="" width="40" height="40" class="d-inline-blocks">
-          <h1 class="d-inline-block align-middle ml-2"><strong>ASP</strong></h1>
+          <h1 class="d-inline-block align-middle ml-2"><strong>Amrita Student Profile</strong></h1>
         </a>
         <div class="collapse navbar-collapse" id="Navbar">
           <ul class="navbar-nav ml-auto">
@@ -51,7 +51,7 @@
       <small>* Required Fields</small>
       <div id="errors">
 	      </div>
-      <form class="form" action="http://localhost:8080/Portal/initial_student_details_servlet" onsubmit="return validate();" method="post">
+      <form class="form" action="student_details" onsubmit="return validate();" method="post">
             <div class="form-group">
               <input type="text" placeholder="Roll number" name="roll_no" value="" required>
               <small class="form-text">Enter your Roll Number</small>
@@ -120,7 +120,7 @@
             </div>
             
             <input type="Submit" class="btn btn-primary my-1">
-            <a class="btn btn-light my-1" href="DashBoard.html">Go Back</a>
+            <a class="btn btn-light my-1" href="dashBoardInitial.jsp">Go Back</a>
         </form>
     </section>
   <script>

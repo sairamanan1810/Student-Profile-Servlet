@@ -25,7 +25,7 @@
         </button>
         <a class="navbar-brand" href="DashBoard.html">
           <img src="assets/amrita-logo.jpg" alt="" width="40" height="40" class="d-inline-blocks">
-          <h1 class="d-inline-block align-middle ml-2"><strong>ASP</strong></h1>
+          <h1 class="d-inline-block align-middle ml-2"><strong>Amrita Student Profile</strong></h1>
         </a>
         <div class="collapse navbar-collapse" id="Navbar">
           <ul class="navbar-nav ml-auto">
@@ -45,7 +45,7 @@
   <!-- Dashboard -->
     <section class="container">
       <h1 class="large text-primary">Dashboard</h1>
-      <p class="lead"><i class="fa fa-user" aria-hidden="true"></i> Welcome ${name}</p>
+      <p class="lead"><i class="fa fa-user" aria-hidden="true"></i> Welcome ${id}</p>
       <div class="dash-buttons">
         <a class="btn" href="view_profile.html"><i class="fa fa-eye" aria-hidden="true"></i> View Profiles</a>
         <a class="btn" href="edit-profile.html"><i class="fa fa-id-card" aria-hidden="true"></i> Edit Profile</a>

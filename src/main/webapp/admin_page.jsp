@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,8 +23,8 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="admin_page.html">
-              <img src="assets/amrita-logo.jpg" alt="" width="40" height="40" class="d-inline-blocks">
-              <h1 class="d-inline-block align-middle ml-2"><strong>ASP</strong></h1>
+              <!--<img src="assets/amrita-logo.jpg" alt="" width="10" height="10" class="d-inline-blocks">-->
+              <h1 class="d-inline-block align-middle ml-2"><strong>Amrita Student Profile</strong></h1>
             </a>
             <div class="collapse navbar-collapse" id="Navbar">
               <ul class="navbar-nav ml-auto">
@@ -41,8 +42,7 @@
                   <div class="d-flex p-4 flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                       <ul class="nav nav-pills flex-column mb-sm-auto mb-0 lh-lg align-items-center justify-content-center align-items-sm-start" id="menu">
                           <li class="p-4">
-                            <img src="assets/profile.png" alt="hugenerd" width="105" height="105" class="rounded-circle"><br><br>
-                            <center><figcaption style="font-weight: bold; color:rgb(221, 155, 32);width:100%;">Sai Ramanan M K</figcaption></center>
+                            <img src="assets/profile.png" alt="hugenerd" width="105" height="105" class="rounded-circle align-middle"><br><br>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link sideNavA" onclick="change_list('student')" href="#"><span class="fa fa-long-arrow-right fa-lg"></span> Student List</a>
@@ -85,24 +85,16 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Sabarish</td>
-                        <td>CSE</td>
-                        <td>@me</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>CSE</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>CSE</td>
-                        <td>@twitter</td>
-                      </tr>
+	                    <c:forEach var="list" items="${list_table}" varStatus="movieLoopCount">
+					        <tr>
+					            <th scope="row">${movieLoopCount.count}</th>     
+					        </tr>
+					        <c:forEach var="details" items="${list}">
+					            <tr>
+					                <td>${details}</td>
+					            </tr>
+					        </c:forEach>
+				    	</c:forEach>
                     </tbody>
                   </table>
               </div>
@@ -136,35 +128,23 @@
                         <th scope="col">Name</th>
                         <th scope="col">Roll Number</th>
                         <th scope="col">Department</th>
-                        <th scope="col">Degree</th>
-                        <th scope="col">Mail Id</th>
+                        <th scope="col">Section</th>
+                        <th scope="col">Year Of Joining</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>1</td>
-                        <td>CSE</td>
-                        <td>B tech</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>2</td>
-                        <td>MEE</td>
-                        <td>B tech</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>3</td>
-                        <td>EEE</td>
-                        <td>B tech</td>
-                        <td>@twitter</td>
-                      </tr>
+                      <c:forEach var="list" items="${list_table}" varStatus="movieLoopCount">
+					        <tr>
+					            <th scope="row">${movieLoopCount.count}</th>     
+					        
+					        	<c:forEach var="details" items="${list}">
+					            
+					                <td>${details}</td>
+					                
+					            </c:forEach>
+					         </tr>
+					        
+				    	</c:forEach>
                     </tbody>
                   </table>
               </div>

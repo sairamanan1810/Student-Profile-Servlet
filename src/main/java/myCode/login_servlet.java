@@ -44,6 +44,7 @@ public class login_servlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		Scanner sc=new Scanner (System.in);
 		PrintWriter out=response.getWriter();
 		response.setContentType("text/html");
 		String name=request.getParameter("name");
@@ -81,8 +82,21 @@ public class login_servlet extends HttpServlet {
 	        		request.getRequestDispatcher("/DashBoard2.jsp").forward(request, response);
 	        		
 	        	}
-	        	else {
+	        	else if(rs.getString(4).equals("Faculty")){
 	        		request.getRequestDispatcher("/FacultyDashBoard.jsp").forward(request, response);
+	        	}
+	        	else {
+	        		ArrayList<ArrayList<String> > student_array= new ArrayList<ArrayList<String> >();
+	        		System.out.println("Hello");
+	        		String sql_next="Select name,roll_no,course,section,joining_year from studentdetails";
+	        		PreparedStatement st_next = con.prepareStatement(sql_next);
+	        		ResultSet rs_next = st_next.executeQuery();
+	        		
+	        		while(rs_next.next()) {
+	        			student_array.add(new ArrayList<String>(Arrays.asList(rs_next.getString(1),rs_next.getString(2),rs_next.getString(3),rs_next.getString(4),String.valueOf(rs_next.getString(5)))));
+	        		}
+	        		request.setAttribute("list_table", student_array);
+	        		request.getRequestDispatcher("/admin_page.jsp").forward(request, response);	
 	        	}
 	        	
 	        }	

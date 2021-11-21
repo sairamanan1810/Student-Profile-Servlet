@@ -12,16 +12,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class initial_student_details_servlet
+ * Servlet implementation class student_details
  */
-@WebServlet("/initial_student_details_servlet")
-public class initial_student_details_servlet extends HttpServlet {
+@WebServlet("/student_details")
+public class student_details extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public initial_student_details_servlet() {
+    public student_details() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -84,7 +84,7 @@ public class initial_student_details_servlet extends HttpServlet {
         // Execute the insert command using executeUpdate()
         // to make changes in database
         st.executeUpdate();
-        request.getRequestDispatcher("/DashBoard.html").forward(request, response);
+        request.getRequestDispatcher("/DashBoard2.jsp").forward(request, response);
         // Close all the connections
         st.close();
         con.close();
