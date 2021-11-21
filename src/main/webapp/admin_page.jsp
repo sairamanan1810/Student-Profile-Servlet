@@ -51,7 +51,7 @@
                             <a class="nav-link sideNavA" href="admin_faculty_table"><span class="fa fa-long-arrow-right fa-lg"></span> Faculty List</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link sideNavA"  href="./admin_create_classes.jsp" ><span class="fa fa-long-arrow-right fa-lg"></span> ASP Classes</a>
+                            <a class="nav-link sideNavA"  href="admin_create_classform_faculty" ><span class="fa fa-long-arrow-right fa-lg"></span> ASP Classes</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link sideNavA" href="./index.html" ><span class="fa fa-sign-out fa-lg"></span> Logout</a>

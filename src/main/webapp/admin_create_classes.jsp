@@ -51,7 +51,7 @@
                             <a class="nav-link sideNavA"  href="admin_faculty_table"><span class="fa fa-long-arrow-right fa-lg"></span> Faculty List</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link sideNavA" href="./admin_create_classes.jsp" ><span class="fa fa-long-arrow-right fa-lg"></span> ASP Classes</a>
+                            <a class="nav-link sideNavA" href="admin_create_classform_faculty" ><span class="fa fa-long-arrow-right fa-lg"></span> ASP Classes</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link sideNavA" href="./index.html" ><span class="fa fa-sign-out fa-lg"></span> Logout</a>
@@ -70,22 +70,27 @@
                   </div>
                   
                   <div class="mx-auto create_class_form">
+                  <form method="post" action="create_class_room">
                     <h6>FACULTY DETAILS<span style="float:right"><i class="fa fa-times-circle fa-lg" style="color:red;font-size: x-large;"></i></span></h6>
                     <div class="row">
                       <div class="col-4">
-                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="Mentor1">
                           <option selected>Mentor 1</option>
-                          <option value="1">Sabarish</option>
-                          <option value="2">Sathya</option>
-                          <option value="3">Ghowtham</option>
+                          <c:forEach var="list" items="${fac_name}">
+	                          <c:forEach var="name" items="${list}">
+						          <option value=${name}>${name}</option>     
+						       </c:forEach>    
+					       </c:forEach>
                         </select>
                       </div>
                       <div class="col-4">
-                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-sm example" name="Mentor2">
                           <option selected>Mentor 2</option>
-                          <option value="1">Sabarish</option>
-                          <option value="2">Sathya</option>
-                          <option value="3">Ghowtham</option>
+                          <c:forEach var="list" items="${fac_name}">
+	                          <c:forEach var="name" items="${list}">
+						          <option value=${name}>${name}</option>     
+						       </c:forEach>    
+					       </c:forEach>
                         </select>
                       </div>
                     </div>
@@ -93,7 +98,7 @@
                     <h6>STUDENT DETAILS</h6>
                     <div class="row">
                       <div class="col-3">
-                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="year_joined">
                           <option selected>Year Joined</option>
                           <option value="1">One</option>
                           <option value="2">Two</option>
@@ -101,26 +106,28 @@
                         </select>
                       </div>
                       <div class="col-3">
-                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-sm example" name="dept">
                           <option selected>Department</option>
-                          <option value="1">CSE</option>
-                          <option value="2">ECE</option>
-                          <option value="3">MEE</option>
+                          <option value="CSE">CSE</option>
+                          <option value="ECE">ECE</option>
+                          <option value="MEE">MEE</option>
                         </select>
                       </div>
                       <div class="col-3">
-                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-sm example" name="section">
                           <option selected>Section</option>
-                          <option value="1">A</option>
-                          <option value="2">B</option>
-                          <option value="3">C</option>
+                          <option value="A">A</option>
+                          <option value="B">B</option>
+                          <option value="C">C</option>
                         </select>
                       </div>
                     </div>
                     <div>
-                      <button type="button" onclick="display_create_form()" class="btn btn-outline-success">Submit</button>
+                      <button type="submit" onclick="display_create_form()" class="btn btn-outline-success">Submit</button>
                     </div>
+                    </form>
                   </div>
+                  
                   <center><h3>CLASS ROOMS</h3></center>
                   <table class="table table-striped">
                     <thead>
@@ -136,40 +143,26 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>CSE</td>
-                        <td>A</td>
-                        <td>B tech</td>
-                        <td>Sabarish</td>
-                        <td>Sathya</td>
-                        <td><a style="cursor:pointer;text-decoration: underline;color:blue;">Students</a></td>
-                        <td><i class="fa fa-times-circle fa-lg" style="color:red;"></i></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>CSE</td>
-                        <td>A</td>
-                        <td>B tech</td>
-                        <td>Sabarish</td>
-                        <td>Sathya</td>
-                        <td><a style="cursor:pointer;text-decoration: underline;color:blue;">Students</a></td>
-                        <td><i class="fa fa-times-circle fa-lg" style="color:red;"></i></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>CSE</td>
-                        <td>A</td>
-                        <td>B tech</td>
-                        <td>Sabarish</td>
-                        <td>Sathya</td>
-                        <td><a style="cursor:pointer;text-decoration: underline;color:blue;">Students</a></td>
-                        <td><i class="fa fa-times-circle fa-lg" style="color:red;"></i></td>
-                      </tr>
+                    <c:forEach var="list" items="${classes}" varStatus="movieLoopCount">
+					        <tr>
+					            <th scope="row">${movieLoopCount.count}</th>     
+					        
+					        	<c:forEach var="details" items="${list}">
+					            
+					                <td>${details}</td>
+					                
+					            </c:forEach>
+					            <td><a style="cursor:pointer;text-decoration: underline;color:blue;">Students</a></td>
+                        		<td><i class="fa fa-times-circle fa-lg" style="color:red;"></i></td>
+					         </tr>
+					        
+				    	</c:forEach>
+                      
                     </tbody>
                   </table>
               </div>
-      </div>
+              
+      	</div>
       </div>
       <script src="js/admin_page.js"></script>
     </body>

@@ -33,7 +33,7 @@
               <a class="nav-link" href="View_profile.html"><span class="fa fa-users fa-lg"></span> Profiles</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="DashBoard.html"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
+              <a class="nav-link" href="DashBoard2.jsp"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="index.html"><span class="fa fa-sign-out fa-lg"></span> Logout</a>
@@ -47,7 +47,7 @@
       <h1 class="large text-primary">Dashboard</h1>
       <p class="lead"><i class="fa fa-user" aria-hidden="true"></i> Welcome ${id}</p>
       <div class="dash-buttons">
-        <a class="btn" href="view_profile.html"><i class="fa fa-eye" aria-hidden="true"></i> View Profiles</a>
+        <a class="btn" href="View_profile.html"><i class="fa fa-eye" aria-hidden="true"></i> View Profiles</a>
         <a class="btn" href="edit-profile.html"><i class="fa fa-id-card" aria-hidden="true"></i> Edit Profile</a>
         <a class="btn" href="add-education.html"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Add Education</a>
         <a class="btn" href="add-experience.html"><i class="fa fa-briefcase" aria-hidden="true"></i> Add Accomplishment</a>
