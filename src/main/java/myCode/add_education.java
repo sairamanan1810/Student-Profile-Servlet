@@ -1,32 +1,33 @@
 package myCode;
-import java.sql.*;
+
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.*;
-import java.util.*;
-import com.mysql.cj.jdbc.Driver;
-import com.mysql.cj.xdevapi.Result;
+import javax.servlet.http.HttpSession;
+
 /**
- * Servlet implementation class login_servlet
+ * Servlet implementation class add_education
  */
-@WebServlet("/login_servlet")
-public class login_servlet extends HttpServlet {
+@WebServlet("/add_education")
+public class add_education extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public login_servlet() {
+    public add_education() {
         super();
         // TODO Auto-generated constructor stub
     }
-
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -34,25 +35,22 @@ public class login_servlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		PrintWriter out=response.getWriter();
-	
-		}
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		Scanner sc=new Scanner (System.in);
 		PrintWriter out=response.getWriter();
 		response.setContentType("text/html");
-		String name=request.getParameter("name");
-		String password=request.getParameter("pwd");
+		
 		System.out.println("In Post");
 		HttpSession session=request.getSession();
+		String roll_no = (String) session.getAttribute("roll_no");
 		
-		String sql="Select * from logincredentials where username=? and password=?";
+		String sql="Select * from StudentDetails where roll_no = ?";
 		try {
 		Connection con = JDBC_connection.initializedatabase();
 		
@@ -60,15 +58,7 @@ public class login_servlet extends HttpServlet {
         // demo table consists of two columns, so two '?' is used
         PreparedStatement st = con.prepareStatement(sql);
 
-        // For the first parameter,
-        // get the data using request object
-        // sets the data to st pointer
-        st.setString(1, name);
-
-        // Same for second parameter
         st.setString(2, password);
-        // Execute the insert command using executeUpdate()
-        // to make changes in database
         ResultSet rs = st.executeQuery();
         String roll_no;
         
@@ -111,9 +101,6 @@ public class login_servlet extends HttpServlet {
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-
-		System.out.println(name);
-		System.out.println(password);
 
 	}
 
