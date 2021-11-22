@@ -135,7 +135,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Department</th>
                         <th scope="col">Section</th>
-                        <th scope="col">Degree</th>
+                        <th scope="col">Year Joined</th>
                         <th scope="col">Mentor 1</th>
                         <th scope="col">Mentor 2</th>
                         <th scope="col">Students List</th>
@@ -146,19 +146,22 @@
                     	<c:forEach var="list" items="${classes}" varStatus="movieLoopCount">
                     		
 						        <tr>
-						        <form method="post" action="get_student_inclass">
+						        
 						            <th scope="row">${movieLoopCount.count}</th>     
 						        
 						        	<c:forEach var="details" items="${list}" varStatus="c">
 						        		<c:choose>
 							            	<c:when test="${c.count == 1}">
-							                	<td><p name="dept">${details}</p></td>
+							                	<td>${details}</td>
+							                	<c:set var = "dept" scope = "session" value = "${details}"/>
 							                </c:when>
 							                <c:when test="${c.count == 2}">
-							                	<td><p name="section">${details}</p></td>
+							                	<td>${details}</td>
+							                	<c:set var = "section" scope = "session" value = "${details}"/>
 							                </c:when>
 							                <c:when test="${c.count == 3}">
-							                	<td><p name="year">${details}</p></td>
+							                	<td>${details}</td>
+							                	<c:set var = "year" scope = "session" value = "${details}"/>
 							                </c:when>
 							                <c:otherwise>
 							                	<td>${details}</td>
@@ -166,9 +169,9 @@
 						                </c:choose>
 						                
 						            </c:forEach>
-						            <td><a style="cursor:pointer;text-decoration: underline;color:blue;">Students</a></td>
-	                        		<td><input type="submit"><i class="fa fa-times-circle fa-lg" style="color:red;"></i></input></td>
-						         </form>
+						            <td><a style="cursor:pointer;text-decoration: underline;color:blue;" href='get_student_inclass?dept=<c:out value="${dept}"/>&section=<c:out value="${section}"/>&year=<c:out value="${year}"/>'>Students</a></td>
+	                        		<td><a style="cursor:pointer;text-decoration: underline;color:blue;" href='delete_class_room?dept=<c:out value="${dept}"/>&section=<c:out value="${section}"/>'><i class="fa fa-times-circle fa-lg" style="color:red;"></i></a></td>
+						         
 						         </tr>
 					        
 				    	</c:forEach>
