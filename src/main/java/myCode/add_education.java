@@ -35,22 +35,14 @@ public class add_education extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		Scanner sc=new Scanner (System.in);
 		PrintWriter out=response.getWriter();
 		response.setContentType("text/html");
-		
-		System.out.println("In Post");
 		HttpSession session=request.getSession();
 		String roll_no = (String) session.getAttribute("roll_no");
 		
 		String sql="Select * from StudentDetails where roll_no = ?";
+		
 		try {
 		Connection con = JDBC_connection.initializedatabase();
 		
@@ -62,16 +54,15 @@ public class add_education extends HttpServlet {
         ResultSet rs = st.executeQuery();
         
         while(rs.next()) {
-	        String course = rs.getString(11);
-	        String section = rs.getString(12);
-	        String jyear = rs.getString(9);
-	        String eyear = rs.getString(10);
+	        String course = rs.getString(12);
+	        String section = rs.getString(13);
+	        String jyear = rs.getString(10);
+	        String eyear = rs.getString(11);
 	        request.setAttribute("course", course);
 	        request.setAttribute("section", section);
 	        request.setAttribute("jyear", jyear);
 	        request.setAttribute("eyear", eyear);
 	        request.getRequestDispatcher("/add-education.jsp").forward(request, response);
-        	
 	        	
 	        }
 	        // Close all the connections
@@ -81,6 +72,15 @@ public class add_education extends HttpServlet {
 		catch(Exception e) {
 			e.printStackTrace();
 		}
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
 
 	}
 
