@@ -1,11 +1,11 @@
 package myCode;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,16 +15,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class add_education
+ * Servlet implementation class faculty_table_filter
  */
-@WebServlet("/add_education")
-public class add_education extends HttpServlet {
+@WebServlet("/faculty_table_filter")
+public class faculty_table_filter extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public add_education() {
+    public faculty_table_filter() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,46 +42,43 @@ public class add_education extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Scanner sc=new Scanner (System.in);
-		PrintWriter out=response.getWriter();
-		response.setContentType("text/html");
-		
-		System.out.println("In Post");
+		doGet(request, response);
 		HttpSession session=request.getSession();
-		String roll_no = (String) session.getAttribute("roll_no");
 		
-		String sql="Select * from StudentDetails where roll_no = ?";
+		String dept=request.getParameter("dept");
 		try {
 		Connection con = JDBC_connection.initializedatabase();
 		
-        // Create a SQL query to insert data into demo table
-        // demo table consists of two columns, so two '?' is used
-        PreparedStatement st = con.prepareStatement(sql);
-
-        st.setString(1, roll_no);
-        ResultSet rs = st.executeQuery();
-        
-        while(rs.next()) {
-	        String course = rs.getString(11);
-	        String section = rs.getString(12);
-	        String jyear = rs.getString(9);
-	        String eyear = rs.getString(10);
-	        request.setAttribute("course", course);
-	        request.setAttribute("section", section);
-	        request.setAttribute("jyear", jyear);
-	        request.setAttribute("eyear", eyear);
-	        request.getRequestDispatcher("/add-education.jsp").forward(request, response);
-        	
+        ArrayList<ArrayList<String> > faculty_array= new ArrayList<ArrayList<String> >();
+	    System.out.println("Hello");
+	        		String sql_next="Select * from facultydetails where department like ?";
+	        		PreparedStatement st_next = con.prepareStatement(sql_next);
+	        		st_next.setString(1, dept);
+	        		ResultSet rs_next = st_next.executeQuery();
+	        		
+	        		while(rs_next.next()) {
+	        			String sql_two="Select email from logincredentials where login_id=?";
+		        		PreparedStatement st_two = con.prepareStatement(sql_two);
+		        		st_two.setString(1,rs_next.getString(2));
+		        		ResultSet rs_two = st_two.executeQuery();
+		        		rs_two.next();
+		        		faculty_array.add(new ArrayList<String>(Arrays.asList(rs_next.getString(3),rs_next.getString(4),rs_two.getString(1))));
+	        		}
+	        		
+	        		request.setAttribute("list_table", faculty_array);
+	        		
+	        		request.getRequestDispatcher("/admin_page_facultyTable.jsp").forward(request, response);	
+	       
 	        	
-	        }
+	        
+	        
 	        // Close all the connections
-	        st.close();
+	        st_next.close();
             con.close();
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }

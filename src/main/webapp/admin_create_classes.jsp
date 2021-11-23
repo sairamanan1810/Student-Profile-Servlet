@@ -100,9 +100,9 @@
                       <div class="col-3">
                         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="year_joined">
                           <option selected>Year Joined</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                          <option value="2018">2018</option>
+                          <option value="2019">2019</option>
+                          <option value="2021">2021</option>
                         </select>
                       </div>
                       <div class="col-3">
@@ -143,18 +143,33 @@
                       </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="list" items="${classes}" varStatus="movieLoopCount">
-					        <tr>
-					            <th scope="row">${movieLoopCount.count}</th>     
-					        
-					        	<c:forEach var="details" items="${list}">
-					            
-					                <td>${details}</td>
-					                
-					            </c:forEach>
-					            <td><a style="cursor:pointer;text-decoration: underline;color:blue;">Students</a></td>
-                        		<td><i class="fa fa-times-circle fa-lg" style="color:red;"></i></td>
-					         </tr>
+                    	<c:forEach var="list" items="${classes}" varStatus="movieLoopCount">
+                    		
+						        <tr>
+						        <form method="post" action="get_student_inclass">
+						            <th scope="row">${movieLoopCount.count}</th>     
+						        
+						        	<c:forEach var="details" items="${list}" varStatus="c">
+						        		<c:choose>
+							            	<c:when test="${c.count == 1}">
+							                	<td><p name="dept">${details}</p></td>
+							                </c:when>
+							                <c:when test="${c.count == 2}">
+							                	<td><p name="section">${details}</p></td>
+							                </c:when>
+							                <c:when test="${c.count == 3}">
+							                	<td><p name="year">${details}</p></td>
+							                </c:when>
+							                <c:otherwise>
+							                	<td>${details}</td>
+							                </c:otherwise>
+						                </c:choose>
+						                
+						            </c:forEach>
+						            <td><a style="cursor:pointer;text-decoration: underline;color:blue;">Students</a></td>
+	                        		<td><input type="submit"><i class="fa fa-times-circle fa-lg" style="color:red;"></i></input></td>
+						         </form>
+						         </tr>
 					        
 				    	</c:forEach>
                       

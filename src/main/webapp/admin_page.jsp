@@ -63,27 +63,31 @@
               
               <div class="col py-3 student" >
                 <center><h3>STUDENTS</h3></center>
+                <form method="post" action="student_table_filter">
                 <div class="row mx-auto form">
+                
                     <div class="col-4">
-                      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                        <option selected>JOINED ON</option>
-                        <option value="1">2018</option>
-                        <option value="2">2019</option>
-                        <option value="3">2020</option>
+                      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="joined_on">
+                        <option selected value="%">JOINED ON</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2021">2021</option>
                       </select>
                     </div>
                     <div class="col-4">
-                      <select class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
-                        <option selected>Department</option>
-                        <option value="1">CSE</option>
-                        <option value="2">ECE</option>
-                        <option value="3">MEE</option>
+                      <select class="form-select form-select-lg mb-3" aria-label=".form-select-sm example" name="dept">
+                        <option selected value="%">Department</option>
+                        <option value="cse">CSE</option>
+                        <option value="ece">ECE</option>
+                        <option value="mee">MEE</option>
                       </select>
                     </div>
                     <div class="col-3">
-                      <button type="button" class="btn btn-outline-success">Submit</button>
+                      <button type="submit" class="btn btn-outline-success">Submit</button>
                     </div>
+                
                 </div>
+                </form>
                   <table class="table table-striped">
                     <thead>
                       <tr>

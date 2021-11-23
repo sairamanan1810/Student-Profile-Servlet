@@ -47,7 +47,7 @@
       <h1 class="large text-primary">Dashboard</h1>
       <p class="lead"><i class="fa fa-user" aria-hidden="true"></i> Welcome ${id}</p>
       <div class="dash-buttons">
-        <a class="btn" href="View_profile.html"><i class="fa fa-eye" aria-hidden="true"></i> View Profiles</a>
+        <a class="btn" href="get_view_profile_data"><i class="fa fa-eye" aria-hidden="true"></i> View Profiles</a>
         <a class="btn" href="edit-profile.html"><i class="fa fa-id-card" aria-hidden="true"></i> Edit Profile</a>
         <a class="btn" href="add_education"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Add Education</a>
         <a class="btn" href="add-experience.html"><i class="fa fa-briefcase" aria-hidden="true"></i> Add Accomplishment</a>
