@@ -48,10 +48,10 @@
                             <a class="nav-link sideNavA" href="admin_student_table"><span class="fa fa-long-arrow-right fa-lg"></span> Student List</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link sideNavA"  href="admin_faculty_table"><span class="fa fa-long-arrow-right fa-lg"></span> Faculty List</a>
+                            <a class="nav-link sideNavA" href="admin_faculty_table"><span class="fa fa-long-arrow-right fa-lg"></span> Faculty List</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link sideNavA" href="admin_create_classform_faculty" ><span class="fa fa-long-arrow-right fa-lg"></span> ASP Classes</a>
+                            <a class="nav-link sideNavA"  href="admin_create_classform_faculty" ><span class="fa fa-long-arrow-right fa-lg"></span> ASP Classes</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link sideNavA" href="./index.html" ><span class="fa fa-sign-out fa-lg"></span> Logout</a>
@@ -60,34 +60,23 @@
                       <hr>
                   </div>
               </div>
-              <div class="col py-3 faculty" >
-                <center><h3>FACULTIES</h3></center>
-                <form action="faculty_table_filter" method="post">
-                <div class="row mx-auto form">
-                  <div class="col-6">
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-sm example" name="dept">
-                      <option selected value="%">Department</option>
-                      <option value="cse">CSE</option>
-                      <option value="eee">EEE</option>
-                      <option value="mee">MEE</option>
-                    </select>
-                  </div>
-                  <div class="col-3">
-                    <button type="submit" class="btn btn-outline-success">Submit</button>
-                  </div>
-                </div>
-                </form>
+              
+              <div class="col py-3 student" >
+                <center><h3>LIST OF STUDENTS</h3></center>
+                
                   <table class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
+                        <th scope="col">Roll Number</th>
                         <th scope="col">Department</th>
-                        <th scope="col">Mail Id</th>
+                        <th scope="col">Section</th>
+                        <th scope="col">Year Of Joining</th>
                       </tr>
                     </thead>
                     <tbody>
-	                    <c:forEach var="list" items="${list_table}" varStatus="movieLoopCount">
+                      <c:forEach var="list" items="${list_table}" varStatus="movieLoopCount">
 					        <tr>
 					            <th scope="row">${movieLoopCount.count}</th>     
 					        
@@ -102,7 +91,11 @@
                     </tbody>
                   </table>
               </div>
+
               
+          </div>
+      </div>
+
       </div>
       </div>
       <script src="js/admin_page.js"></script>

@@ -100,9 +100,9 @@
                       <div class="col-3">
                         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="year_joined">
                           <option selected>Year Joined</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                          <option value="2018">2018</option>
+                          <option value="2019">2019</option>
+                          <option value="2021">2021</option>
                         </select>
                       </div>
                       <div class="col-3">
@@ -135,7 +135,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Department</th>
                         <th scope="col">Section</th>
-                        <th scope="col">Degree</th>
+                        <th scope="col">Year Joined</th>
                         <th scope="col">Mentor 1</th>
                         <th scope="col">Mentor 2</th>
                         <th scope="col">Students List</th>
@@ -143,18 +143,36 @@
                       </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="list" items="${classes}" varStatus="movieLoopCount">
-					        <tr>
-					            <th scope="row">${movieLoopCount.count}</th>     
-					        
-					        	<c:forEach var="details" items="${list}">
-					            
-					                <td>${details}</td>
-					                
-					            </c:forEach>
-					            <td><a style="cursor:pointer;text-decoration: underline;color:blue;">Students</a></td>
-                        		<td><i class="fa fa-times-circle fa-lg" style="color:red;"></i></td>
-					         </tr>
+                    	<c:forEach var="list" items="${classes}" varStatus="movieLoopCount">
+                    		
+						        <tr>
+						        
+						            <th scope="row">${movieLoopCount.count}</th>     
+						        
+						        	<c:forEach var="details" items="${list}" varStatus="c">
+						        		<c:choose>
+							            	<c:when test="${c.count == 1}">
+							                	<td>${details}</td>
+							                	<c:set var = "dept" scope = "session" value = "${details}"/>
+							                </c:when>
+							                <c:when test="${c.count == 2}">
+							                	<td>${details}</td>
+							                	<c:set var = "section" scope = "session" value = "${details}"/>
+							                </c:when>
+							                <c:when test="${c.count == 3}">
+							                	<td>${details}</td>
+							                	<c:set var = "year" scope = "session" value = "${details}"/>
+							                </c:when>
+							                <c:otherwise>
+							                	<td>${details}</td>
+							                </c:otherwise>
+						                </c:choose>
+						                
+						            </c:forEach>
+						            <td><a style="cursor:pointer;text-decoration: underline;color:blue;" href='get_student_inclass?dept=<c:out value="${dept}"/>&section=<c:out value="${section}"/>&year=<c:out value="${year}"/>'>Students</a></td>
+	                        		<td><a style="cursor:pointer;text-decoration: underline;color:blue;" href='delete_class_room?dept=<c:out value="${dept}"/>&section=<c:out value="${section}"/>'><i class="fa fa-times-circle fa-lg" style="color:red;"></i></a></td>
+						         
+						         </tr>
 					        
 				    	</c:forEach>
                       
