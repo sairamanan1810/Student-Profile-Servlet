@@ -75,3 +75,6 @@ nav a, nav{
 .container {
     margin-top: 6rem;
 }
+table{
+    border: 2px solid grey;
+}

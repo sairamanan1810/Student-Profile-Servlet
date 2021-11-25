@@ -49,21 +49,115 @@
       </div>
       
     <!-- Request List -->
-    <h2 class="margin-2">List of Request</h2>
+    
+    <p class="text-center" style="text-decoration:underline;font-size:x-large;font-weight:bold">Request for Internship Approval</p>
     <table class="table">
       <thead>
         <tr>
-          <th class="hide-sm">Name</th>
-          <th class="hide-sm">Remark</th>
-          <th>Accept/Reject</th>
+        	<th scope="col">#</th>
+          	<th scope="col">Roll Number</th>
+         	<th scope="col">Details</th>
+          	<th>Accept/Reject</th>
         </tr>
       </thead>
       <tbody>
-          <td>Sai Ramanan</td>
-          <td>Add Certification</td>
-          <td><span><button type="button" class="btn btn-success">Accept</button></span><span><button type="button" class="btn btn-success">Reject</button></span></td>
-      </tbody>
-    </table>
+      	<c:forEach var="list" items="${request_intern_add}" varStatus="movieLoopCount">
+				<tr>
+					<th scope="row">${movieLoopCount.count}</th>     
+						<td>${list[0]}</td>
+						<td>
+							<li><span style="font-weight:bold">Company Name: </span>${list[1]}</li>
+							<li><span style="font-weight:bold">Duration </span>${list[2]}</li>
+							<li><span style="font-weight:bold">Role: </span>${list[3]}</li>
+							<li><span style="font-weight:bold">Description: </span>${list[4]}</li>
+						</td>
+					   
+							<td>
+							    <span>
+							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Approved&type=intern'" class="btn btn-success">Accept</button>
+							    </span>
+							    <span>
+							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Rejected&type=intern'" class="btn btn-success" >Reject</button>
+							    </span>
+						    </td>
+				</tr>        
+		</c:forEach>
+		</tbody>
+		</table>
+		<br>
+		<p class="text-center" style="text-decoration:underline;font-size:x-large;font-weight:bold">Request for Project Approval</p>
+		<table class="table">
+	      <thead>
+	        <tr>
+	        	<th scope="col">#</th>
+	          	<th scope="col">Roll Number</th>
+	         	<th scope="col">Details</th>
+	          	<th>Accept/Reject</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+				<c:forEach var="list" items="${request_project_add}" varStatus="movieLoopCount">
+						<tr>
+							<th scope="row">${movieLoopCount.count}</th>     
+								<td>${list[0]}</td>
+								<td>
+									<li><span style="font-weight:bold">Title: </span>${list[1]}</li>
+									<li><span style="font-weight:bold">Duration </span>${list[2]}</li>
+									<li><span style="font-weight:bold">Tools: </span>${list[3]}</li>
+									<li><span style="font-weight:bold">Description: </span>${list[4]}</li>
+								</td>
+							   
+							<td>
+							    <span>
+							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Approved&type=project'" class="btn btn-success">Accept</button>
+							    </span>
+							    <span>
+							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Rejected&type=project'" class="btn btn-success" >Reject</button>
+							    </span>
+						    </td>		
+						</tr>        
+				</c:forEach>
+		</tbody>
+		</table>
+		<br>
+		<p class="text-center" style="text-decoration:underline;font-size:x-large;font-weight:bold">Request for Journal Approval</p>
+		<table class="table">
+	      <thead>
+	        <tr>
+	        	<th scope="col">#</th>
+	          	<th scope="col">Roll Number</th>
+	         	<th scope="col">Details</th>
+	          	<th>Accept/Reject</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+			<c:forEach var="list" items="${request_journal_add}" varStatus="movieLoopCount">
+					<tr>
+						<th scope="row">${movieLoopCount.count}</th>     
+							<td>${list[0]}</td>
+							<td>
+								
+								<li><span style="font-weight:bold">Title: </span>${list[1]}</li>
+								<li><span style="font-weight:bold">Duration </span>${list[2]}</li>
+								<li><span style="font-weight:bold">Publication: </span>${list[3]}</li>
+								<li><span style="font-weight:bold">Description: </span>${list[4]}</li>
+								
+							</td>
+							<c:set var="identity" value="${list[5]}"></c:set>
+						   
+						    <td>
+							    <span>
+							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Approved&type=journal'" class="btn btn-success">Accept</button>
+							    </span>
+							    <span>
+							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Rejected&type=journal'" class="btn btn-success" >Reject</button>
+							    </span>
+						    </td>
+	
+					</tr>        
+			</c:forEach>
+	      </tbody>
+    	</table>
     <div class="margin-2">
       <button class="btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete My Account</button>
     </div>
