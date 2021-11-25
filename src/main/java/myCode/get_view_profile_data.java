@@ -35,7 +35,15 @@ public class get_view_profile_data extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession session=request.getSession();
-		String var=String.valueOf(session.getAttribute("roll_no"));
+		String var;
+		if(request.getParameterMap().containsKey("roll_no")) {
+			var=String.valueOf(request.getParameter("roll_no"));
+		}
+		else {
+			var=String.valueOf(session.getAttribute("roll_no"));
+		}
+		
+		
 		System.out.print(var);
 		ArrayList<String> skill_set= new ArrayList<String>();
 		try {
@@ -45,16 +53,19 @@ public class get_view_profile_data extends HttpServlet {
 		st.setString(1, var);
 		ResultSet rs=st.executeQuery();
 		while(rs.next()) {
-			session.setAttribute("profile_name",rs.getString(2));
-			session.setAttribute("profile_location",rs.getString(3));
+			request.setAttribute("profile_name",rs.getString(2));
+			request.setAttribute("profile_location",rs.getString(3));
 			String[] skills = String.valueOf(rs.getString(4)).split(",");
-			session.setAttribute("profile_skillset",skills);
-			session.setAttribute("profile_linkedin",rs.getString(5));
-			session.setAttribute("profile_github",rs.getString(6));
-			session.setAttribute("profile_gmail",String.valueOf("mailto"+rs.getString(7)));
-			session.setAttribute("profile_bio",rs.getString(9));
-			session.setAttribute("profile_dept",rs.getString(12).toUpperCase()+"-"+rs.getString(13));
-			session.setAttribute("profile_duration",rs.getString(10)+" - "+rs.getString(11));
+			request.setAttribute("profile_skillset",skills);
+			request.setAttribute("profile_linkedin",rs.getString(5));
+			request.setAttribute("profile_github",rs.getString(6));
+			request.setAttribute("profile_gmail",String.valueOf("mailto"+rs.getString(7)));
+			request.setAttribute("profile_bio",rs.getString(9));
+			request.setAttribute("profile_dept",rs.getString(12).toUpperCase()+"-"+rs.getString(13));
+			request.setAttribute("profile_duration",rs.getString(10)+" - "+rs.getString(11));
+			request.setAttribute("course", rs.getString(12));
+			request.setAttribute("jyear", rs.getString(10));
+			request.setAttribute("eyear", rs.getString(11));
 		}
 		String sql_one="Select * from journals where student_id=? and status=?";
 		String sql_two="Select * from internship where student_id=? and status=?";
@@ -98,9 +109,14 @@ public class get_view_profile_data extends HttpServlet {
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-		request.getRequestDispatcher("/view_profile.jsp").forward(request,response);	
 		
-		
+		if(request.getParameterMap().containsKey("func")) {
+			
+			request.getRequestDispatcher("/DashBoard2.jsp").forward(request, response);	
+		}
+		else {
+			request.getRequestDispatcher("/view_profile.jsp").forward(request,response);
+		}
 		}
 
 	/**
