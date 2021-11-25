@@ -39,7 +39,7 @@ public class signup_servlet extends HttpServlet {
 		String email=request.getParameter("email");
 		String roll_no=request.getParameter("roll_no");
 		String pwd=request.getParameter("pwd");
-		String sql="Insert Into class_room(username,password,role,roll_no,email) Values (?,?,?,?,?)";
+		String sql="Insert Into logincredentials(username,password,role,roll_no,email) Values (?,?,?,?,?)";
 		try {
 		Connection con = JDBC_connection.initializedatabase();
 		

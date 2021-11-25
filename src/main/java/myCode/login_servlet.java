@@ -83,6 +83,7 @@ public class login_servlet extends HttpServlet {
 	        		
 	        	}
 	        	else if(rs.getString(4).equals("Faculty")){
+	        		session.setAttribute("loginId",rs.getString(1));
 	        		request.getRequestDispatcher("/FacultyDashBoard.jsp").forward(request, response);
 	        	}
 	        	else {
