@@ -9,5 +9,12 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
+  <!-- <servlet>
+  <servlet-name>education</servlet-name>
+  <servlet-class>myCode.add_education</servlet-class>
+</servlet>
+<servlet-mapping> 
+<servlet-name>education</servlet-name>
+<url-pattern>/add_education(</url-pattern>
+</servlet-mapping> -->
 </web-app>

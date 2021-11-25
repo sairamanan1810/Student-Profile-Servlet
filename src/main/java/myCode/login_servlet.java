@@ -79,6 +79,17 @@ public class login_servlet extends HttpServlet {
 	        	request.setAttribute("name", name);
 	        	if(rs.getString(4).equals("Student")) {
 					session.setAttribute("roll_no",roll_no);
+					
+					String sql2 = "Select * from StudentDetails where roll_no=?";
+					PreparedStatement st2 = con.prepareStatement(sql2);
+					st2.setString(1, roll_no);
+					ResultSet rs2 = st2.executeQuery();
+					while(rs2.next()) {
+						request.setAttribute("course", rs2.getString(12));
+						request.setAttribute("jyear", rs2.getString(10));
+						request.setAttribute("eyear", rs2.getString(11));
+					}
+					
 	        		request.getRequestDispatcher("/DashBoard2.jsp").forward(request, response);
 	        		
 	        	}

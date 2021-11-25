@@ -49,7 +49,7 @@
       <div class="dash-buttons">
         <a class="btn" href="get_view_profile_data"><i class="fa fa-eye" aria-hidden="true"></i> View Profiles</a>
         <a class="btn" href="edit-profile.html"><i class="fa fa-id-card" aria-hidden="true"></i> Edit Profile</a>
-        <a class="btn" href="add-education.html"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Add Education</a>
+        <a class="btn" href="add_education"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Add Education</a>
         <a class="btn" href="add-experience.html"><i class="fa fa-briefcase" aria-hidden="true"></i> Add Accomplishment</a>
         
       </div>
@@ -61,8 +61,15 @@
           <th>School</th>
           <th class="hide-sm">Degree</th>
           <th class="hide-sm">Field Of Study</th>
-          <th>Years</th>
-          <!-- <th></th> -->
+          <th>Joining Date</th>
+          <th>Ending Date</th>
+        </tr>
+        <tr>
+          <td>Amrita School Of Engineering</td>
+          <td>BTech</td>
+          <td>${course}</td>
+          <td>${jyear}</td>
+          <td>${eyear}</td>
         </tr>
       </thead>
       <tbody></tbody>
