@@ -48,7 +48,7 @@ public class Project_details extends HttpServlet {
 		String tools = request.getParameter("project_tools");
 		String description = request.getParameter("project_description");
 		//out.println(title+','+duration+','+tools+','+description);
-		String sql="Insert Into project(student_id,title,duration,tools,description) Values (?,?,?,?,?)";
+		String sql="Insert Into project(student_id,title,duration,tools,description,status) Values (?,?,?,?,?,?)";
 		try {
 			Connection con = JDBC_connection.initializedatabase();
 			PreparedStatement st = con.prepareStatement(sql);
@@ -57,7 +57,7 @@ public class Project_details extends HttpServlet {
 			st.setString(3, tools);
 	        st.setString(4, duration);
 	        st.setString(5, description);
-	        
+	        st.setString(6, "Wait");
 	        st.executeUpdate();
 
 	        // Close all the connections

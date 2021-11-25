@@ -67,7 +67,7 @@ public class faculty_details extends HttpServlet {
 			e.printStackTrace();
 		}
 		session.setAttribute("id",name);
-		request.getRequestDispatcher("/FacultyDashboard.jsp").forward(request, response);
+		request.getRequestDispatcher("/FacultyDashBoard.jsp").forward(request, response);
 	}
 
 }

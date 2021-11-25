@@ -58,7 +58,7 @@
             <h6>Roll no : ${student.rollno}</h6>
             <h6>Bio : ${student.bio}</h6>
             <h6 class="my-1 mb-3"><span>Location : ${student.location}</span></h6>
-            <a class="btn btn-second" href="./View_profile.html?rollno=${student.rollno}">View Profile</a>
+            <a class="btn btn-second" href="get_view_profile_data?roll_no=${student.rollno}">View Profile</a>
           </div>
           <ul>
             <c:forTokens items="${student.skill}" delims="," var="skill">

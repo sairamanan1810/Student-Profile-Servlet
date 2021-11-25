@@ -14,6 +14,7 @@ import java.util.Arrays;
 /**
  * Servlet implementation class student_table_filter
  */
+
 @WebServlet("/student_table_filter")
 public class student_table_filter extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -60,6 +61,7 @@ public class student_table_filter extends HttpServlet {
 		    while(rs_next.next()) {
 		    	filter_array.add(new ArrayList<String>(Arrays.asList(rs_next.getString(1),rs_next.getString(2),rs_next.getString(3),rs_next.getString(4),String.valueOf(rs_next.getString(5)))));
     		}
+		    //System.out.println(filter_array);
     		request.setAttribute("list_table", filter_array);
     		
     		request.getRequestDispatcher("/admin_page.jsp").forward(request, response);	

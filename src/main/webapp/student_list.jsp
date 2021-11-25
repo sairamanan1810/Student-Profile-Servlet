@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/student_list.css">  
+    <link rel="stylesheet" href="css/student_list.css"> 
+    <!--  <link rel="stylesheet" href="css/admin_page.css"> -->
     <title>View Profile</title>
 </head>
 <body>
@@ -41,33 +45,36 @@
         </div>
      </nav>
   </div>
-  
-    <h2 class="margin-2">Students List</h2>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th class="hide-sm">Roll Number</th>
-        </tr>
-        <tr>
-            <td>Arjun</td>
-            <td>CB.EN.U4CSE18217</td>
-        </tr>
-        <tr>
-            <td>Deekshan</td>
-            <td>CB.EN.U4CSE18217</td>
-        </tr>
-        <tr>
-            <td>Sri Ram</td>
-            <td>CB.EN.U4CSE18227</td>
-        </tr>
-        <tr>
-            <td>Sai Ramanan</td>
-            <td>CB.EN.U4CSE18249</td>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <a class="btn my-1" href="FacultyDashBoard.html">Go Back</a>
+  <div class="mx-auto" style="width:80%">
+    <h2 class="text-center" style="color:rgb(221, 155, 32);">Students List</h2>
+    <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Roll Number</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Section</th>
+                        <th scope="col">Year Of Joining</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <c:forEach var="list" items="${student_list}" varStatus="movieLoopCount">
+					        <tr>
+					            <th scope="row">${movieLoopCount.count}</th>     
+					        
+					        	<c:forEach var="details" items="${list}">
+					            
+					                <td>${details}</td>
+					                
+					            </c:forEach>
+					         </tr>
+					        
+				    	</c:forEach>
+                    </tbody>
+                  </table>
+            
+         </div>
+    
 </body>
 </html>

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +45,7 @@
       <h1 class="large text-primary text-center">Dashboard</h1>
       <p class="lead" style="fontWeight:'bolder';"><i class="fa fa-user" aria-hidden="true"></i> Welcome ${id}</p>
       <div class="dash-buttons">
-        <a class="btn" href=""><i class="fa fa-id-card" aria-hidden="true"></i> Student's List</a>
+        <a class="btn" href="list_students_ofA_faculty"><i class="fa fa-id-card" aria-hidden="true"></i> Student's List</a>
       </div>
       
     <!-- Request List -->

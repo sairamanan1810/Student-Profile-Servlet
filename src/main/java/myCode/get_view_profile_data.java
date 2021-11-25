@@ -36,6 +36,7 @@ public class get_view_profile_data extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession session=request.getSession();
 		String var=String.valueOf(session.getAttribute("roll_no"));
+		System.out.print(var);
 		ArrayList<String> skill_set= new ArrayList<String>();
 		try {
 		Connection con = JDBC_connection.initializedatabase();
@@ -55,15 +56,18 @@ public class get_view_profile_data extends HttpServlet {
 			session.setAttribute("profile_dept",rs.getString(12).toUpperCase()+"-"+rs.getString(13));
 			session.setAttribute("profile_duration",rs.getString(10)+" - "+rs.getString(11));
 		}
-		String sql_one="Select * from journals where student_id=?";
-		String sql_two="Select * from internship where student_id=?";
-		String sql_three="Select * from project where student_id=?";
+		String sql_one="Select * from journals where student_id=? and status=?";
+		String sql_two="Select * from internship where student_id=? and status=?";
+		String sql_three="Select * from project where student_id=? and status=?";
 		PreparedStatement st_one=con.prepareStatement(sql_one);
 		PreparedStatement st_two=con.prepareStatement(sql_two);
 		PreparedStatement st_three=con.prepareStatement(sql_three);
 		st_one.setString(1, var);
 		st_two.setString(1, var);
 		st_three.setString(1, var);
+		st_one.setString(2, "Approved");
+		st_two.setString(2, "Approved");
+		st_three.setString(2, "Approved");
 		ResultSet rs_one=st_one.executeQuery();
 		ResultSet rs_two=st_two.executeQuery();
 		ResultSet rs_three=st_three.executeQuery();
@@ -86,11 +90,17 @@ public class get_view_profile_data extends HttpServlet {
 		System.out.println(projects);
 		System.out.println(journals);
 		System.out.println(interns);
+		con.close();
+		st_one.close();
+		st_two.close();
+		st.close();
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		request.getRequestDispatcher("/view_profile.jsp").forward(request,response);	
+		
+		
 		}
 
 	/**

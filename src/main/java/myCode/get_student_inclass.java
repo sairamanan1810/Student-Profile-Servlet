@@ -59,7 +59,7 @@ public class get_student_inclass extends HttpServlet {
 	        		ResultSet rs_next = st_next.executeQuery();
 	        		
 	        		while(rs_next.next()) {
-	        			classes.add(new ArrayList<String>(Arrays.asList(rs_next.getString(1),rs_next.getString(2),rs_next.getString(3),rs_next.getString(4),String.valueOf(rs_next.getString(5)))));
+	        			classes.add(new ArrayList<String>(Arrays.asList(rs_next.getString(1),rs_next.getString(2),rs_next.getString(3).toUpperCase(),rs_next.getString(4),String.valueOf(rs_next.getString(5)))));
 	        		}
 	        		request.setAttribute("list_table", classes);
 	        		

@@ -12,11 +12,11 @@ public class JDBC_connection {
 		Scanner sc=new Scanner (System.in);
 		String url = "jdbc:mysql://localhost:3306/student_profile";
 		String un="root";
-		String pass="root";
+		String pass="password";
+		
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection con= DriverManager.getConnection(url,un,pass);
 		return con;
-		
 	}
 
 }
