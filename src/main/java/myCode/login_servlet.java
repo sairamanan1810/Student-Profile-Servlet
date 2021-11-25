@@ -81,6 +81,58 @@ public class login_servlet extends HttpServlet {
 					session.setAttribute("roll_no",roll_no);
 					
 	        		request.getRequestDispatcher("/get_view_profile_data?func=dashboard").forward(request, response);
+					
+					
+					//
+					ArrayList<Map<String, String>> accompishments = new ArrayList<Map<String, String>>();
+					String sql_next = "Select * from internship where student_id='"+roll_no+"'";
+					PreparedStatement st_next = con.prepareStatement(sql_next);
+					ResultSet rs3 = st_next.executeQuery();
+					while (rs3.next()) {
+						Map<String, String> intern = new HashMap<String, String>(){
+							{
+								put("title",rs3.getString(3));
+								put("description",rs3.getString(6));
+								put("type","Internship");
+								put("duration",rs3.getString(4));
+								put("status",rs3.getString(7));
+								
+							}};
+							accompishments.add(intern);
+					}
+					String sql_next1 = "Select * from project where student_id='"+roll_no+"'";
+					PreparedStatement st_next1 = con.prepareStatement(sql_next1);
+					ResultSet rs4 = st_next1.executeQuery();
+					while (rs4.next()) {
+						Map<String, String> project = new HashMap<String, String>(){
+							{
+								put("title",rs4.getString(3));
+								put("description",rs4.getString(6));
+								put("type","Project");
+								put("duration",rs4.getString(5));
+								put("status",rs4.getString(7));
+								
+							}};
+							accompishments.add(project);
+					}
+					String sql_next2 = "Select * from journals where student_id='"+roll_no+"'";
+					PreparedStatement st_next2 = con.prepareStatement(sql_next2);
+					ResultSet rs5 = st_next2.executeQuery();
+					while (rs5.next()) {
+						Map<String, String> journal = new HashMap<String, String>(){
+							{
+								put("title",rs5.getString(2));
+								put("description",rs5.getString(5));
+								put("type","Journal");
+								put("duration",rs5.getString(3));
+								put("status",rs5.getString(7));
+								
+							}};
+							accompishments.add(journal);
+					}
+					request.setAttribute("accomplishments", accompishments);
+					
+	        		request.getRequestDispatcher("/DashBoard2.jsp").forward(request, response);
 	        		
 	        	}
 	        	else if(rs.getString(4).equals("Faculty")){
