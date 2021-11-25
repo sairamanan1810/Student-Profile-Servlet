@@ -76,8 +76,8 @@ public class student_details extends HttpServlet {
         st.setString(9, bio);
         st.setString(10, start);
         st.setString(11, end);
-        st.setString(12, course);
-        st.setString(13, section);
+        st.setString(12, section);
+        st.setString(13, course);
         // Same for second parameter
         
         

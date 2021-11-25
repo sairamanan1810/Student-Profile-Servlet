@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,10 +84,21 @@
           <th class="hide-sm">Description</th>
           <th class="hide-sm">Type</th>
           <th>Duration</th>
+          <th>Status</th>
           <!-- <th></th> -->
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+      <c:forEach items="${accomplishments}" var="accom">
+        <tr>
+          <td>${accom.title}</td>
+          <td>${accom.description}</td>
+          <td>${accom.type}</td>
+          <td>${accom.duration}</td>
+          <td>${accom.status}</td>
+        </tr>
+      </c:forEach>
+      </tbody>
     </table>
     
     <div class="margin-2">

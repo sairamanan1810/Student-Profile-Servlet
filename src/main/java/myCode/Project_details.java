@@ -54,8 +54,8 @@ public class Project_details extends HttpServlet {
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1, (String)request.getSession().getAttribute("roll_no"));
 			st.setString(2, title);
-			st.setString(3, tools);
-	        st.setString(4, duration);
+			st.setString(3, duration);
+	        st.setString(4, tools);
 	        st.setString(5, description);
 	        st.setString(6, "Wait");
 	        st.executeUpdate();
