@@ -38,6 +38,11 @@
     padding: 1rem;
     text-align: left;
 }
+
+.table tr:nth-child(odd) {
+    background-color: #e5ebf1;
+
+}
 .form-group {
     margin: 1.2rem 0;
 }

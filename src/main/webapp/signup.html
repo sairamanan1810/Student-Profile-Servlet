@@ -33,36 +33,58 @@
       </ul>
     </div>
   </nav>
-
-  <div class="signUp">
-      <h3 class="signup-h1 text-center"><span class="fa fa-user-plus fa-lg"> </span>  Sign Up</h3>
-	      <div id="errors">
-	      </div>
-	      <form method="GET" action="http://localhost:8080/Portal/signup_servlet" onsubmit="return validate();">
-		      <div class="form-group">
-		        <input type="text" class="form-control" id="name" name="name" placeholder="Name"/>
-		      </div>
-		      <div class="form-group">
-		        <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"/>
-		      </div>
-		      Student <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck">
-		      Faculty <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"><br>
-		      <div class="form-group" id="ifStudent" style="display:none;">
-		        <input type="text" class="form-control" id="roll_no" name="roll_no" placeholder="Roll Number"/>
-		      </div>
-		      <div class="form-group">
-		        <input type="password" id="pwd" name="pwd" class="form-control" placeholder="Password">
-		      </div>
-		      <div class="form-group">
-		        <input type="password" id="conf_pwd" name="conf_pwd" class="form-control" placeholder="Confirm Password">
-		      </div>
-		      <div class="button">
-		        <Button type="submit" class="btn btn-second mr-1" onclick="validate()" style="background-color:#0574a9;">Register</Button>
-		      </div><br>
-	      </form>
-      
-      <div class="sign-up">Already Have an Account?<span><a href="login.html" style="color:#01a1ec;font-weight:bold"> SignIn</a></span></div>
+  <div class="animated-div">
+  <div style="display: flex;width: 80%;margin: auto;">
+    <div style="flex-direction:row;flex: .5;height: 575px;padding: 15px;">
+      <img src="assets/StudentManagement2.png" alt="Profile profileManagement" width="100%" height="100%" style="border-radius: 20px;"> 
+    </div>
+    <div style="flex-direction: row;flex: .5;margin-top: 10%;">
+      <div class="signUp">
+        <h3 class="signup-h1 text-center"><span class="fa fa-user-plus fa-lg"> </span>  Sign Up</h3>
+          <div id="errors">
+          </div>
+          <form method="GET" action="http://localhost:8080/Portal/signup_servlet" onsubmit="return validate();">
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Name"/>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"/>
+            </div>
+            Student <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck">
+            Faculty <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"><br>
+            <div class="form-group" id="ifStudent" style="display:none;">
+              <input type="text" class="form-control" id="roll_no" name="roll_no" placeholder="Roll Number"/>
+            </div>
+            <div class="form-group">
+              <input type="password" id="pwd" name="pwd" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <input type="password" id="conf_pwd" name="conf_pwd" class="form-control" placeholder="Confirm Password">
+            </div>
+            <div class="button">
+              <Button type="submit" class="btn btn-second mr-1" onclick="validate()">Register</Button>
+            </div><br>
+          </form>
+        
+        <div class="sign-up">Already Have an Account?<span><a href="login.html" style="color:#01a1ec;font-weight:bold"> SignIn</a></span></div>
+    </div>
+    </div>
   </div>
+  </div>
+  <style>
+    @keyframes slideInLeft {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    .animated-div {
+      animation: 1s ease-out 0s 1 slideInLeft;
+    }
+  </style>
+  
   <script src="signup.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
