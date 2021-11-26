@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="Navbar">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="./profilesearch.html"><span class="fa fa-users fa-lg"></span> Profiles</a>
+              <a class="nav-link" href="./profile_search?search=a"><span class="fa fa-users fa-lg"></span> Profiles</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span> Home</a>

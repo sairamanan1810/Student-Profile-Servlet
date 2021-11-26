@@ -24,7 +24,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="DashBoard.html">
+        <a class="navbar-brand" href="./dashboard_details">
            <img src="assets/avatar.png" alt=""  class="d-inline-blocks">
               <p class="d-inline-block" style="font-size:x-large;color:#01a1ec;font-weight:bolder"><i class="bi bi-bookmark-fill"></i><strong>Amrita Student Profile</strong></p>
         </a>
@@ -34,7 +34,7 @@
               <a class="nav-link" href="View_profile.html"><span class="fa fa-users fa-lg"></span> Profiles</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="DashBoard.html"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
+              <a class="nav-link" href="./dashboard_details"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="logout"><span class="fa fa-sign-out fa-lg"></span> Logout</a>
@@ -44,7 +44,7 @@
      </nav>
   </div>
   <!-- Add Education -->
-    <section class="container">
+    <section class="container" style="margin-top:0rem">
         <h1 class="text-center page-heading">Add Your Education</h1>
         <p class="lead"><i class="fa fa-code" aria-hidden="true"></i> Add any school, bootcamp, etc that you have attended</p>
         <div id="errors">
@@ -76,7 +76,7 @@
                 <textarea name="description" cols="30" rows="5" placeholder="Description"></textarea>
             </div>
             <input type="submit" class="btn btn-primary my-1">
-            <a class="btn my-1" href="DashBoard.html">Go Back</a>
+            <a class="btn my-1" href="./dashboard_details">Go Back</a>
         </form>
     </section>
   <script>

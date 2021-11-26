@@ -24,14 +24,14 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="FacultyDashBoard.html">
+        <a class="navbar-brand">
           <img src="assets/avatar.png" alt=""  class="d-inline-blocks">
               <p class="d-inline-block" style="font-size:x-large;color:#01a1ec;font-weight:bolder"><i class="bi bi-bookmark-fill"></i><strong>Amrita Student Profile</strong></p>
         </a>
         <div class="collapse navbar-collapse" id="Navbar">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="./profilesearch.html"><span class="fa fa-users fa-lg"></span> Profiles</a>
+              <a class="nav-link" href="./profile_search?search=a"><span class="fa fa-users fa-lg"></span> Profiles</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./index.html"><span class="fa fa-sign-out fa-lg"></span> Logout</a>
@@ -45,7 +45,7 @@
       <h1 class="text-center page-heading">FACULTY DASHBOARD</h1>
       <p class="lead" style="fontWeight:'bolder';"><i class="fa fa-user" aria-hidden="true"></i> Welcome ${id}</p>
       <div class="dash-buttons">
-        <a class="btn" href="list_students_ofA_faculty"><i class="fa fa-id-card" aria-hidden="true"></i> Student's List</a>
+        <a class="btn" href="list_students_ofA_faculty" style="background-color:#01a1ec"><i class="fa fa-id-card" aria-hidden="true"></i> Student's List</a>
       </div>
       
     <!-- Request List -->
@@ -63,7 +63,7 @@
       <tbody>
       	<c:forEach var="list" items="${request_intern_add}" varStatus="movieLoopCount">
 				<tr>
-					<th scope="row">${movieLoopCount.count}</th>     
+					<td scope="row">${movieLoopCount.count}</td>     
 						<td>${list[0]}</td>
 						<td>
 							<li><span style="font-weight:bold">Company Name: </span>${list[1]}</li>
@@ -74,10 +74,10 @@
 					   
 							<td>
 							    <span>
-							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Approved&type=intern'" class="btn btn-success">Accept</button>
+							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Approved&type=intern'" class="btn btn-success accept_reject" style="padding:10px;background-color:green;color:white">Accept</button>
 							    </span>
 							    <span>
-							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Rejected&type=intern'" class="btn btn-success" >Reject</button>
+							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Rejected&type=intern'" class="btn btn-success accept_reject" style="padding:10px;background-color:red;color:white">Reject</button>
 							    </span>
 						    </td>
 				</tr>        
@@ -98,7 +98,7 @@
 	      <tbody>
 				<c:forEach var="list" items="${request_project_add}" varStatus="movieLoopCount">
 						<tr>
-							<th scope="row">${movieLoopCount.count}</th>     
+							<td scope="row">${movieLoopCount.count}</td>     
 								<td>${list[0]}</td>
 								<td>
 									<li><span style="font-weight:bold">Title: </span>${list[1]}</li>
@@ -109,10 +109,10 @@
 							   
 							<td>
 							    <span>
-							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Approved&type=project'" class="btn btn-success">Accept</button>
+							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Approved&type=project'" class="btn btn-success accept_reject" style="padding:10px;background-color:green;color:white">Accept</button>
 							    </span>
 							    <span>
-							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Rejected&type=project'" class="btn btn-success" >Reject</button>
+							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Rejected&type=project'" class="btn btn-success accept_reject" style="padding:10px;background-color: red;color:white">Reject</button>
 							    </span>
 						    </td>		
 						</tr>        
@@ -133,7 +133,7 @@
 	      <tbody>
 			<c:forEach var="list" items="${request_journal_add}" varStatus="movieLoopCount">
 					<tr>
-						<th scope="row">${movieLoopCount.count}</th>     
+						<td scope="row">${movieLoopCount.count}</td>     
 							<td>${list[0]}</td>
 							<td>
 								
@@ -147,10 +147,10 @@
 						   
 						    <td>
 							    <span>
-							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Approved&type=journal'" class="btn btn-success">Accept</button>
+							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Approved&type=journal'" class="btn btn-success accept_reject" style="padding:10px;background-color:green;color:white">Accept</button>
 							    </span>
 							    <span>
-							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Rejected&type=journal'" class="btn btn-success" >Reject</button>
+							    	<button type="button" onclick="location.href='http://localhost:8080/Portal/approve_accomplishment?id=${list[5]}&status=Rejected&type=journal'" class="btn btn-success accept_reject" style="padding:10px;background-color: red;color:white">Reject</button>
 							    </span>
 						    </td>
 	

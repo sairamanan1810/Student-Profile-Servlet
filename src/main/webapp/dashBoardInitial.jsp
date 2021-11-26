@@ -23,7 +23,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="DashBoard.html">
+        <a class="navbar-brand" href="./dashboard_details">
           <img src="assets/avatar.png" alt=""  class="d-inline-blocks">
               <p class="d-inline-block" style="font-size:x-large;color:#01a1ec;font-weight:bolder"><i class="bi bi-bookmark-fill"></i><strong>Amrita Student Profile</strong></p>
         </a>
@@ -33,7 +33,7 @@
               <a class="nav-link" href="View_profile.html"><span class="fa fa-users fa-lg"></span> Profiles</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="DashBoard.html"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
+              <a class="nav-link" href="./dashboard_details"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="index.html"><span class="fa fa-sign-out fa-lg"></span> Logout</a>

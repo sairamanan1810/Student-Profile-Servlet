@@ -60,3 +60,20 @@
     font-size: 1.2rem;
     border: 1px solid #ccc;
 }
+.accept_reject{
+	border-radius:10px;
+}
+.accept_reject:hover{
+	font-weight:bolder;
+}
+tr:nth-child(even){
+	background-color:#d3d3dc;
+	border:1px solid white;
+}
+tr:nth-child(odd){
+	background-color:#babac2;
+	border:1px solid white;
+}
+td{
+	border:1px solid white;
+}
