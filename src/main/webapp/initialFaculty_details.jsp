@@ -25,7 +25,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="DashBoard.html">
+        <a class="navbar-brand" href="./dashboard_details">
            <img src="assets/avatar.png" alt=""  class="d-inline-blocks">
               <p class="d-inline-block" style="font-size:x-large;color:#01a1ec;font-weight:bolder"><i class="bi bi-bookmark-fill"></i><strong>Amrita Student Profile</strong></p>
         </a>
