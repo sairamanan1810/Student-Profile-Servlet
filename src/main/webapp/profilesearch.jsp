@@ -52,7 +52,7 @@
     <div class="profiles">
       <c:forEach items="${st_list}" var="student">
         <div class="profile">
-          <img src="${student.photo}" onerror="this.onerror=null; this.src='assets/profile.png'" alt="" class="round-img">
+          <img src="${student.photo}" onerror="this.onerror=null; this.src='assets/profile.png'" alt="" class="round-img" height="200" width="200">
           <div>
             <h2>${student.name}</h2>
             <h6>Roll no : ${student.rollno}</h6>

@@ -63,7 +63,7 @@ public class update_profile extends HttpServlet {
 			int rs=st.executeUpdate();
 			
 			
-			request.getRequestDispatcher("/get_view_profile_data?func=dashboard").forward(request,response);
+			request.getRequestDispatcher("/dashboard_details").forward(request,response);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

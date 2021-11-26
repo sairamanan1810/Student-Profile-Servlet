@@ -36,7 +36,7 @@
               <a class="nav-link" href="View_profile.html"><span class="fa fa-users fa-lg"></span> Profiles</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="DashBoard.html"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
+              <a class="nav-link" href="./dashboard_details"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="index.html"><span class="fa fa-sign-out fa-lg"></span> Logout</a>
