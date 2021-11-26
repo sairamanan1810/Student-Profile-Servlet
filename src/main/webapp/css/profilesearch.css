@@ -17,8 +17,9 @@
     line-height: 1.6;
     margin-bottom: 1rem;
     background-color: #98bae7;
-    border: 1px solid #0574a9;
-    border-radius: 5vh;
+    border: 2px solid #0574a9;
+    border-radius: 2vh;
+    box-shadow: 5px 5px 5px grey;
 }
 
 .round-img {
@@ -30,7 +31,7 @@ ul {
 }
 
 .text-second{
-    color:rgb(172, 117, 16);
+    color:#0d5170;
 }
 
 .profile-search {
@@ -51,7 +52,7 @@ ul {
     float: left;
     width: 15%;
     padding: 10px;
-    background:#01a1ec;
+    background:#096894;
     color: white;
     font-size: 17px;
     border: 1px solid black;
@@ -68,6 +69,6 @@ ul {
     clear: both;
     display: table;
   }
-  .profile div h2,.profile div h6,.profile li{
+  .profile div h2,.profile div h6,{
   color: black;
   }

@@ -32,10 +32,10 @@
         <div class="collapse navbar-collapse" id="Navbar">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="View_profile.html"><span class="fa fa-users fa-lg"></span> Profiles</a>
+              <a class="nav-link" href="./profile_search?search=a"><span class="fa fa-users fa-lg"></span> Profiles</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="DashBoard2.jsp"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
+              <a class="nav-link" href="./dashboard_details"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="index.html"><span class="fa fa-sign-out fa-lg"></span> Logout</a>
