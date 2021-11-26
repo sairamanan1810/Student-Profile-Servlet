@@ -47,18 +47,17 @@
     </nav>
   </div>
   <!-- Dashboard -->
-  <section class="container">
-    <h1 class="text-center page-heading">Dashboard</h1>
-    <p class="lead"><i class="fa fa-user" aria-hidden="true"></i> Welcome ${id}</p>
-    <div class="dash-buttons">
-      <a class="btn" href="get_view_profile_data"><i class="fa fa-eye" aria-hidden="true"></i> View Profiles</a>
-      <a class="btn" href="edit_profile"><i class="fa fa-id-card" aria-hidden="true"></i> Edit Profile</a>
-      <a class="btn" href="add_education"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Add Education</a>
-      <a class="btn" href="add-experience.html"><i class="fa fa-briefcase" aria-hidden="true"></i> Add
-        Accomplishment</a>
-
-    </div>
-    <!-- Education -->
+    <section class="container">
+      <h1 class="text-center page-heading">STUDENT DASHBOARD</h1>
+      <p class="lead"><i class="fa fa-user" aria-hidden="true"></i> Welcome ${id}</p>
+      <div class="dash-buttons">
+        <a class="btn" href="get_view_profile_data" style="background-color:#01a1ec"><i class="fa fa-eye" aria-hidden="true"></i> View Profiles</a>
+        <a class="btn" href="edit_profile" style="background-color:#01a1ec"><i class="fa fa-id-card" aria-hidden="true"></i> Edit Profile</a>
+        <a class="btn" href="add_education" style="background-color:#01a1ec"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Add Education</a>
+        <a class="btn" href="add-experience.html" style="background-color:#01a1ec"><i class="fa fa-briefcase" aria-hidden="true" ></i> Add Accomplishment</a>
+        
+      </div>
+      <!-- Education -->
     <h2 class="margin-2">Education</h2>
     <table class="table">
       <thead>

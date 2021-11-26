@@ -32,12 +32,6 @@
         </a>
         <div class="collapse navbar-collapse" id="Navbar">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="./profile_search?search=a"><span class="fa fa-users fa-lg"></span> Profiles</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./dashboard_details"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
-            </li>
             <li class="nav-item">
               <a class="nav-link" href="index.html"><span class="fa fa-sign-out fa-lg"></span> Logout</a>
             </li>
@@ -46,7 +40,7 @@
      </nav>
   </div>
   <div class="mx-auto" style="width:80%">
-    <h2 class="text-center page-heading" style="color:rgb(221, 155, 32);">STUDENT LIST</h2>
+    <h1 class="text-center page-heading">STUDENT LIST</h1>
     <table class="table table-striped">
                     <thead>
                       <tr>

@@ -46,8 +46,8 @@
     </nav>
   </div>
   <!-- Add Experience -->
-  <section class="container">
-    <h1 class="large text-primary text-center page-heading">Add Accomplishments</h1>
+  <section class="container" style="margin-top:0rem">
+    <h1 class="text-center page-heading">Add Accomplishments</h1>
     <p class="lead">
       <i class="fa fa-code" aria-hidden="true"></i> Add any Internship /
       Project / Journals that you have done it
@@ -56,13 +56,13 @@
     </div>
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
+        aria-haspopup="true" aria-expanded="false" style="background-color:#01a1ec">
         Internship
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" onclick="showExperience('internship-form','Internship')">Internship</a>
-        <a class="dropdown-item" onclick="showExperience('project-form','Project')">Project</a>
-        <a class="dropdown-item" onclick="showExperience('journal-form','Journal')">Journal</a>
+        <a class="dropdown-item" onclick="showExperience('internship-form','Internship')" style="cursor:pointer">Internship</a>
+        <a class="dropdown-item" onclick="showExperience('project-form','Project')" style="cursor:pointer">Project</a>
+        <a class="dropdown-item" onclick="showExperience('journal-form','Journal')" style="cursor:pointer">Journal</a>
       </div>
     </div>
     <div class="internship-form" id="internship-form" style="display:block">

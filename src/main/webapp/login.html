@@ -14,7 +14,19 @@
   <link rel="stylesheet" href="css/style.css"/>
   <title>ASP Login</title>
 </head>
-
+<style>
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  .animated-div {
+    animation: 1s ease-out 0s 1 slideInRight;
+  }
+</style>
 <body>
 
   <nav class="navbar bg-first navbar-expand-sm fixed-top">
@@ -34,28 +46,36 @@
     </div>
   </nav>
 
-  <div class="login">
-      <h1 class="text-center page-heading"><span class="fa fas fa-user"></span> Sign In</h1>
-      
-      <div id="errors">
-	      <ul>
-	      	<li id="error_rollno"></li>
-	      	<li id="error_pwd"></li>
-	      </ul>
-      </div>
-      
-     <form method="post" action="http://localhost:8080/Portal/login_servlet" onsubmit="return validate();">
-	      <div class="form-group">
-	        <input type="text" class="form-control" id="roll_no" name="name" placeholder="Name">
-	      </div>
-	      <div class="form-group">
-	        <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password">
-	      </div>
-	      <div class="button">
-	        <button class="btn btn-second mr-1" type="submit">Submit</button>
-	      </div><br>
-      </form>
-      <div class="sign-up">Don't Have an Account?<span><a href="signup.html" style="color: #01a1ec;font-weight:bold"> SignUp</a></span></div>
+  <div class="animated-div">
+  <div style="display: flex;width: 80%;margin: auto;">
+    <div style="flex-direction:row;flex: .5;height: 575px;padding: 15px;">
+      <img src="assets/profileManagement.png" alt="Profile profileManagement" width="100%" height="100%" style="border-radius: 20px;"> 
+    </div>
+    <div style="flex-direction: row;flex: .5;margin-top: 10%;">
+      <div class="login">
+        <h1 class="text-center page-heading"><span class="fa fas fa-user"></span> Sign In</h1>
+        <div id="errors">
+          <ul>
+            <li id="error_rollno"></li>
+            <li id="error_pwd"></li>
+          </ul>
+        </div>
+        
+       <form method="post" action="http://localhost:8080/Portal/login_servlet" onsubmit="return validate();">
+          <div class="form-group">
+            <input type="text" class="form-control" id="roll_no" name="name" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password">
+          </div>
+          <div class="button">
+            <button class="btn btn-second mr-1" type="submit">Submit</button>
+          </div><br>
+        </form>
+        <div class="sign-up">Don't Have an Account?<span><a href="signup.html" style="color: #01a1ec;font-weight:bold"> SignUp</a></span></div>
+    </div>
+    </div>
+  </div>
   </div>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
