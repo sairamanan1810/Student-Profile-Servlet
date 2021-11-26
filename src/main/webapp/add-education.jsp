@@ -44,7 +44,7 @@
      </nav>
   </div>
   <!-- Add Education -->
-    <section class="container">
+    <section class="container" style="margin-top:0rem">
         <h1 class="text-center page-heading">Add Your Education</h1>
         <p class="lead"><i class="fa fa-code" aria-hidden="true"></i> Add any school, bootcamp, etc that you have attended</p>
         <div id="errors">
