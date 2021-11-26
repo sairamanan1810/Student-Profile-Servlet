@@ -4,12 +4,19 @@
     padding:20px;
     width:80%;
     padding:0px;
+    border:1px solid #0574a9;
+    border-radius:20px;
 }
 .internships,.projects,.journals{
     margin:auto;
     padding:20px;
     width:70%;
     padding:0px;
+    
+}
+.intern_component{
+	border-radius:20px;
+	border:1px solid #0574a9;
 }
 .projects,.journals{
     display: none;
@@ -24,11 +31,11 @@
 }
 .about{
     margin-top: 15vh;
-    background-color: rgb(221, 155, 32);
+    background-color: #01a1ec;
     padding:4vh;
 }
 .skill_set{
-    background-color: rgb(230, 223, 223);
+    background-color: white;
     padding:3vh;
 }
 .skill_set div{
@@ -38,15 +45,15 @@
 .experience{
     box-sizing: border-box;   
     padding:0px;
+    background-color:white;
+    
 }
 .experience div{
     padding:10px;
     width:100%;
 }
 .nav_in{
-    margin: 0;
-    background-color:rgb(230, 223, 223);
-    width:100%;
+    background-color: #01a1ec;
     padding:10px;
 }
 .nav_in .col-2{
@@ -55,7 +62,7 @@
 }
 .nav_in .col-2 a{
     cursor: pointer;
-    color:white;
+    color: white;
 }
 .nav_in .col-2 a:hover{
     font-weight: bolder;
@@ -63,7 +70,7 @@
     text-decoration: underline;
 }
 .intern_component{
-    background-color: rgb(230, 223, 223);
+    background-color: white;
     padding:20px;
 }
 

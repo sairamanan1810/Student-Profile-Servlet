@@ -54,6 +54,7 @@ public class get_view_profile_data extends HttpServlet {
 		ResultSet rs=st.executeQuery();
 		while(rs.next()) {
 			request.setAttribute("profile_name",rs.getString(2));
+			request.setAttribute("profile_photo",rs.getString(8));
 			request.setAttribute("profile_location",rs.getString(3));
 			String[] skills = String.valueOf(rs.getString(4)).split(",");
 			request.setAttribute("profile_skillset",skills);

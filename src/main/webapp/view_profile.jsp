@@ -36,33 +36,32 @@
             <li class="nav-item">
               <a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span> Home</a>
             </li>
-            
           </ul>
         </div>
      </nav>
   </div>
   <!-- About -->
-      <div class="about">
-        <center><img class="img-fluid rounded-circle" width="200vh" height="300vh" alt="Nothing" src="assets/profile.png"></center>
+      <div class="about shadow p-3 mb-5">
+        <center><img class="img-fluid rounded-circle" width="200vh" height="300vh" src="${profile_photo}" onerror="this.onerror=null; this.src='assets/profile.png'"></center>
         <center><p id="name" style="font-weight: bold;color:white;font-size: 7vh;">${profile_name}</p></center>
         <center><p id="status" style="color:white;font-size: xx-large;">STUDENT</p></center>
         <center><p id="city"  style="color:white;font-size: medium;">${profile_location}</p></center>
         <center><div id="urls">
-          <a href=${profile_gmail}><i class="fa fa-google" style="font-size:4vh;cursor:pointer"></i></a>&nbsp
-          <a href=${profile_linkedin}><i class="fa fa-linkedin-square" style="font-size:4vh;cursor:pointer"></i></a>&nbsp
-          <a href=${profile_github}><i class="fa fa-facebook-square" style="font-size:4vh;cursor:pointer"></a></i>
+          <a href=${profile_gmail}><i class="fa fa-google" style="font-size:4vh;cursor:pointer;color:black"></i></a>&nbsp
+          <a href=${profile_linkedin}><i class="fa fa-linkedin-square" style="font-size:4vh;cursor:pointer;color:black"></i></a>&nbsp
+          <a href=${profile_github}><i class="fa fa-facebook-square" style="font-size:4vh;cursor:pointer;color:black"></a></i>
         </p></center>
       </div>
       <br>
 <!-- Skill Set -->
       <div class="skill_set">
         <div>
-         <center> <p style="font-weight:bolder;color:rgb(221, 155, 32);font-size: large;">About ${profile_name}</p></center>
+         <center> <p style="font-weight:bolder;color:#01a1ec;font-size: large;">About ${profile_name}</p></center>
          <center><p style="font-size: medium;">${profile_bio}</p></center>
         </div>
         <hr>
         <div>
-          <center><p style="font-weight:bolder;color:rgb(221, 155, 32);font-size: large;">Skill Set</p></center>
+          <center><p style="font-weight:bolder;color:#01a1ec;font-size: large;">Skill Set</p></center>
           <div style="display:flex;">
           		<c:forEach var="skill" items="${profile_skillset}">
 					            
@@ -76,12 +75,12 @@
 <!-- Experience -->
       <div class="row gx-5 experience">
         <div class="col-3 border">
-          <div class="p-3" style="font-weight:bolder;color:rgb(221, 155, 32);font-size: x-large;text-decoration: underline;">Experience</div>
+          <div class="p-3" style="font-weight:bolder;color:#01a1ec;font-size: x-large;text-decoration: underline;">Experience</div>
           
         </div>
         <div class="col-9 border">
           <div class="p-3" >
-            <p style="font-weight:bolder;color:rgb(221, 155, 32);font-size: x-large;">Education</p>
+            <p style="font-weight:bolder;color:#01a1ec;font-size: x-large;">Education</p>
             <p id="college_name" style="font-weight: bold;">Amrita Vishwa Vidyapeetham</p>
             <p id="duration">${profile_duration}</p>
             <p id="degree"><span style="font-weight: bold;">Degree: </span>B TECH</p>
@@ -91,13 +90,13 @@
       </div>
       <br>
 <!-- Accomplishments -->
-      <div class="row accomplishments">
-        <div class="row nav_in">
-          <div class="col-6" style="font-size: xx-large;font-weight: bolder;color:rgb(221, 155, 32);">Accomplishments</div>
-          <div class="col-2"><a onclick="change_accomplishments('intern')" id="interns_head">Internships</a></div>
-          <div class="col-2"><a onclick="change_accomplishments('projects')" id="project_head">Projects</a></div>
-          <div class="col-2"><a onclick="change_accomplishments('journals')" id="journal_head">Journals</a></div>
-        </div>
+      <div class="row nav_in accomplishments shadow p-3 mb-5">
+        
+          <div class="col-6" style="font-size: xx-large;font-weight: bolder;color:white;">Accomplishments</div>
+          <div class="col-2" style="color:white"><a onclick="change_accomplishments('intern')" id="interns_head">Internships</a></div>
+          <div class="col-2" style="color:white"><a onclick="change_accomplishments('projects')" id="project_head">Projects</a></div>
+          <div class="col-2" style="color:white"><a onclick="change_accomplishments('journals')" id="journal_head">Journals</a></div>
+        
       </div>
       <br>
       <!-- Interns -->
@@ -106,7 +105,7 @@
         <br>
         <div class="intern_component">
         		<c:forEach var="list" items="${interns}" varStatus="interncount">
-        			<center><h5 style="font-weight: bolder;text-decoration: underline;color:rgb(221, 155, 32);">Internship ${interncount.count}</h5></center>
+        			<center><h5 style="font-weight: bolder;text-decoration: underline;color:#01a1ec;">Internship ${interncount.count}</h5></center>
 					 <c:forEach var="details" items="${list}" varStatus="movieLoopCount">
 					     <c:if test="${movieLoopCount.count == 1}">
 					     <div class="row">
@@ -145,7 +144,7 @@
         <br>
         <div class="intern_component">
             <c:forEach var="list" items="${projects}" varStatus="projectcount">
-        			<center><h5 style="font-weight: bolder;text-decoration: underline;color:rgb(221, 155, 32);">Project ${projectcount.count}</h5></center>
+        			<center><h5 style="font-weight: bolder;text-decoration: underline;color:#01a1ec;">Project ${projectcount.count}</h5></center>
 					 <c:forEach var="details" items="${list}" varStatus="movieLoopCount">
 					     <c:if test="${movieLoopCount.count == 1}">
 					     <div class="row">
