@@ -13,37 +13,35 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/admin_page.css">
-        <title>Admin</title>
+        <title>Admin Faculty Details</title>
     </head>
     <body>
       <!-- Navbar -->
       <div>
-        <nav class="navbar bg-first navbar-expand-sm fixed-top">
+        <nav class="navbar navbar-expand-sm fixed-top">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
               <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="admin_page.html">
-              <!--<img src="assets/amrita-logo.jpg" alt="" width="10" height="10" class="d-inline-blocks">-->
-              <h1 class="d-inline-block align-middle ml-2"><strong>Amrita Student Profile</strong></h1>
+              <img src="assets/avatar.png" alt="" class="d-inline-blocks">
+              <p class="d-inline-block" style="font-size:x-large;color:#01a1ec;font-weight:bolder"><i class="bi bi-bookmark-fill"></i><strong>Amrita Student Profile</strong></p>
             </a>
-            <div class="collapse navbar-collapse" id="Navbar">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active" style="font-style: italic;font-size: x-large;font-weight: bold;text-decoration: underline;">
-                  Admin Dashboard
-                </li>
-              </ul>
-            </div>
          </nav>
       </div>
       <div class="sideNav">
         <div class="container-fluid">
           <div class="row flex-nowrap">
-              <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-first" style="opacity: 0.9;">
+              <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-first" style="opacity: 0.9;background-color:black">
                   <div class="d-flex p-4 flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                       <ul class="nav nav-pills flex-column mb-sm-auto mb-0 lh-lg align-items-center justify-content-center align-items-sm-start" id="menu">
-                          <li class="p-4">
-                            <img src="assets/profile.png" alt="hugenerd" width="105" height="105" class="rounded-circle align-middle"><br><br>
+                          
+                          <li class="p-4 nav-item mx-auto align-middle" style="width:90%">
+                            <img class="sideNavA rounded-circle" src="assets/profile.png" alt="hugenerd" width="105" height="105" class=" align-middle"><br><br>
                           </li>
+                          <li class="align-middle text-center" style="font-weight: bolder;font-size: larger;color:#01a1ec">
+			                  ADMIN DASHBOARD
+			               </li>
+			               <br>
                           <li class="nav-item">
                             <a class="nav-link sideNavA" href="admin_student_table"><span class="fa fa-long-arrow-right fa-lg"></span> Student List</a>
                           </li>
@@ -54,14 +52,14 @@
                             <a class="nav-link sideNavA" href="admin_create_classform_faculty" ><span class="fa fa-long-arrow-right fa-lg"></span> ASP Classes</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link sideNavA" href="./index.html" ><span class="fa fa-sign-out fa-lg"></span> Logout</a>
+                            <a class="nav-link sideNavA" href="logout" ><span class="fa fa-sign-out fa-lg"></span> Logout</a>
                           </li>
                       </ul>
                       <hr>
                   </div>
               </div>
               <div class="col py-3 faculty" >
-                <center><h3>FACULTIES</h3></center>
+                <center><h3>FACULTY LIST</h3></center>
                 <form action="faculty_table_filter" method="post">
                 <div class="row mx-auto form">
                   <div class="col-6">

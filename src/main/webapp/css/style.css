@@ -7,12 +7,13 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.6;
-    background-color: #fff;
     color: #333;
+    background-image: linear-gradient(#cbcbd7, #E6E6FA);
+    height:100%;
   }
 
 .bg-first{
-    background-color: rgb(29, 21, 11);
+    background-color: black;
 }
 .bg-second{
     background-color: rgb(221, 155, 32);
@@ -27,7 +28,7 @@ body {
 }
 
 nav a, nav{
-    color: rgb(221, 155, 32);
+    color: #0574a9;
 }
 
 .navbar, .navbar ul {
@@ -41,12 +42,13 @@ nav a, nav{
     position: fixed;
     z-index: 1;
     top: 0;
-    border-bottom: 2px solid rgb(221, 155, 32);
+    
     opacity: .9;
 }
 
 .navbar a:hover {
-    color: rgb(250, 193, 86);
+    color: #0574a9;
+    font-weight:bolder;
   }
 
 .btn {
@@ -77,4 +79,7 @@ nav a, nav{
 }
 table{
     border: 2px solid grey;
+}
+.navbar-brand img{
+	width:50px;
 }

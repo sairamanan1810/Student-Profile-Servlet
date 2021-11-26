@@ -22,26 +22,20 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="index.html">
-      <img src="assets/amrita-logo.jpg" alt="" width="40" height="40" class="d-inline-blocks">
-      <h1 class="d-inline-block align-middle ml-2"><strong>Amrita Student Profile</strong></h1>
+       <img src="assets/avatar.png" alt=""  class="d-inline-blocks">
+       <p class="d-inline-block" style="font-size:x-large;color:#01a1ec;font-weight:bolder"><i class="bi bi-bookmark-fill"></i><strong>Amrita Student Profile</strong></p>
     </a>
     <div class="collapse navbar-collapse" id="Navbar">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="./profilesearch.html"><span class="fa fa-users fa-lg"></span> Profiles</a>
-        </li>
         <li class="nav-item">
-          <a class="nav-link" href="./login.html"><span class="fa fa-sign-in fa-lg"></span> Login</a>
+            <a class="nav-link" href="./index.html" style="font-size:large"><span class="fa fas fa-home"></span> Home</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./index.html"><span class="fa fas fa-home"></span> Home</a>
-          </li>
       </ul>
     </div>
   </nav>
 
   <div class="signUp">
-      <h3 class="signup-h1 text-center"><span class="fa fa-user-plus fa-lg"></span>Sign Up</h3>
+      <h3 class="signup-h1 text-center"><span class="fa fa-user-plus fa-lg"> </span>  Sign Up</h3>
 	      <div id="errors">
 	      </div>
 	      <form method="GET" action="http://localhost:8080/Portal/signup_servlet" onsubmit="return validate();">
@@ -67,7 +61,7 @@
 		      </div><br>
 	      </form>
       
-      <div class="sign-up">Already Have an Account?<span><a href="login.html" style="color: rgb(250, 193, 86);"> SignIn</a></span></div>
+      <div class="sign-up">Already Have an Account?<span><a href="login.html" style="color:#01a1ec;font-weight:bold"> SignIn</a></span></div>
   </div>
   <script src="signup.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS. -->

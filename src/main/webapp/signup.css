@@ -3,8 +3,11 @@ body {
 }
 
 .signup-h1 {
-    color:rgb(221, 155, 32);
     margin-bottom: 1rem;
+    color:#01a1ec;
+    font-family: Georgia, sans-serif;
+    font-size: xx-large;
+    letter-spacing: -2px;
 }
 
 .signUp{

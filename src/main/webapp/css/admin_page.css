@@ -1,19 +1,22 @@
 body{
     padding-top:68px;
+    background-image: linear-gradient(#cbcbd7, #E6E6FA);
+    height:100vh;
 }
 img{
     margin: 0;
     width:80%;
 }
 .sideNavA{
-    color:rgb(221, 155, 32);
+    color:#0574a9;
     cursor: pointer;
     font-size: large;
 }
 .sideNavA:hover{
     text-decoration: underline;
-    color:rgb(221, 155, 32);
-    font-weight: bolder;
+    color:#0574a9;
+    font-weight: bold;
+  
 }
 .create_class_form{
     display: none;
@@ -22,9 +25,11 @@ img{
     padding:5vh;
 }
 .faculty h3,.student h3,.classes h3{
-    padding: 4vh;
-    text-decoration: underline;
-    font-weight: bolder;
+    padding-top: 4vh;
+    color:#01a1ec;
+    font-family: Georgia, sans-serif;
+    font-size: xx-large;
+    letter-spacing: -2px;
 }
 table{
     border: 2px solid grey;
@@ -59,4 +64,8 @@ table{
     letter-spacing: 2px;
     font-size: large;
 }
+.navbar{
+	background-color:black;
+}
+	
 

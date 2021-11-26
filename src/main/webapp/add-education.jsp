@@ -25,8 +25,8 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="DashBoard.html">
-          <img src="assets/amrita-logo.jpg" alt="" width="40" height="40" class="d-inline-blocks">
-          <h1 class="d-inline-block align-middle ml-2"><strong>Amrita Student Profile</strong></h1>
+           <img src="assets/avatar.png" alt=""  class="d-inline-blocks">
+              <p class="d-inline-block" style="font-size:x-large;color:#01a1ec;font-weight:bolder"><i class="bi bi-bookmark-fill"></i><strong>Amrita Student Profile</strong></p>
         </a>
         <div class="collapse navbar-collapse" id="Navbar">
           <ul class="navbar-nav ml-auto">
@@ -37,7 +37,7 @@
               <a class="nav-link" href="DashBoard.html"><span class="fa fa-user-circle-o fa-lg"></span> Dashboard</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html"><span class="fa fa-sign-out fa-lg"></span> Logout</a>
+              <a class="nav-link" href="logout"><span class="fa fa-sign-out fa-lg"></span> Logout</a>
             </li>
           </ul>
         </div>
