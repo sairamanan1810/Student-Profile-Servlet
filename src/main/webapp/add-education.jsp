@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/view_prof.css">
     <link rel="stylesheet" href="css/dashboard.css">  
-    <title>View Profile</title>
+    <title>Add Education</title>
     <link rel="stylesheet" href="signup.css"/>
 </head>
 <body>
@@ -45,7 +45,7 @@
   </div>
   <!-- Add Education -->
     <section class="container">
-        <h1 class="large text-primary">Add Your Education</h1>
+        <h1 class="text-center page-heading">Add Your Education</h1>
         <p class="lead"><i class="fa fa-code" aria-hidden="true"></i> Add any school, bootcamp, etc that you have attended</p>
         <div id="errors">
 	      </div>

@@ -42,7 +42,7 @@
   </div>
   <!-- Dashboard -->
     <section class="container">
-      <h1 class="large text-primary text-center">Dashboard</h1>
+      <h1 class="text-center page-heading">FACULTY DASHBOARD</h1>
       <p class="lead" style="fontWeight:'bolder';"><i class="fa fa-user" aria-hidden="true"></i> Welcome ${id}</p>
       <div class="dash-buttons">
         <a class="btn" href="list_students_ofA_faculty"><i class="fa fa-id-card" aria-hidden="true"></i> Student's List</a>

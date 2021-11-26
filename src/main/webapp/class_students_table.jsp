@@ -62,7 +62,7 @@
               </div>
               
               <div class="col py-3 student" >
-                <center><h3>LIST OF STUDENTS</h3></center>
+                <center><h3 class="text-center page-heading">LIST OF STUDENTS</h3></center>
                 
                   <table class="table table-striped">
                     <thead>

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/student_list.css"> 
     <!--  <link rel="stylesheet" href="css/admin_page.css"> -->
-    <title>View Profile</title>
+    <title>Student List</title>
 </head>
 <body>
   <!-- Navbar -->
@@ -46,7 +46,7 @@
      </nav>
   </div>
   <div class="mx-auto" style="width:80%">
-    <h2 class="text-center" style="color:rgb(221, 155, 32);">Students List</h2>
+    <h2 class="text-center page-heading" style="color:rgb(221, 155, 32);">STUDENT LIST</h2>
     <table class="table table-striped">
                     <thead>
                       <tr>
