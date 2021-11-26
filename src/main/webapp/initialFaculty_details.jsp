@@ -44,7 +44,7 @@
         </div>
      </nav>
   </div>
-      <h1 class="large text-primary text-center">Create Your Profile</h1>
+      <h1 class="text-center page-heading">Create Your Profile</h1>
       
       <small>* Required Fields</small>
       <div id="errors">

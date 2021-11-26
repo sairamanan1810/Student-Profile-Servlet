@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/view_prof.css">
     <link rel="stylesheet" href="css/dashboard.css">  
-    <title>View Profile</title>
+    <title>SignUp Details</title>
 </head>
 <body>
   <!-- Navbar -->
@@ -44,7 +44,7 @@
   </div>
   <!-- Dash board initial -->
   <section class="container">
-      <h1 class="large text-primary">Dashboard</h1>
+      <h1 class="text-center page-heading">GET SIGNUP DETAILS</h1>
       <p class="lead"><i class="fa fa-user" aria-hidden="true"></i> Welcome ${name}</p>
       <p>You have not setup a Profile. Please add some info</p>
       <a class="btn btn-primary my-1" href="initial_profilecreation.html">Create Profile</a>

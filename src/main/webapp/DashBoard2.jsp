@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/view_prof.css">
     <link rel="stylesheet" href="css/dashboard.css">  
-    <title>View Profile</title>
+    <title>Student DashBoard</title>
 </head>
 <body>
   <!-- Navbar -->
@@ -45,7 +45,7 @@
   </div>
   <!-- Dashboard -->
     <section class="container">
-      <h1 class="large text-primary">Dashboard</h1>
+      <h1 class="text-center page-heading">Dashboard</h1>
       <p class="lead"><i class="fa fa-user" aria-hidden="true"></i> Welcome ${id}</p>
       <div class="dash-buttons">
         <a class="btn" href="get_view_profile_data"><i class="fa fa-eye" aria-hidden="true"></i> View Profiles</a>

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/view_prof.css"> 
     <link rel="stylesheet" href="css/dashboard.css"> 
-    <title>View Profile</title>
+    <title>Edit Profile</title>
 </head>
 <body>
   <!-- Navbar -->
@@ -45,7 +45,7 @@
 
   <!-- edit-profile -->
   <section class="container">
-      <h1 class="large text-primary">Create Your Profile</h1>
+      <h1 class="text-center page-heading">Create Your Profile</h1>
       <p class="lead"><i class="fa fa-heart" aria-hidden="true"></i> Let's get some information about you</p>
       <small>* = Required Fields</small>
       <form class="form" action="update_profile" method="post">

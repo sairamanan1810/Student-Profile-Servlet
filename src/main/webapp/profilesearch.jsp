@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/profilesearch.css" />
-  <title>ASP</title>
+  <title>Profile Search</title>
 </head>
 
 <body>
@@ -41,8 +41,8 @@
   </nav>
 
   <div class="container">
-    <h1 class="profiles-h1">Profiles</h1>
-    <h3><span class="fa fa-users fa-md"></span> search profiles</h3>
+    <h1 class="text-center page-heading"><span class="fa fa-users fa-md"></span> SEARCH  PROFILES</h1>
+    <h3></h3>
     <div class="search">
       <form class="profile-search" method="get" action="http://localhost:8080/Portal/profile_search">
         <input type="text" placeholder="Search.." name="search">
@@ -51,14 +51,14 @@
     </div>
     <div class="profiles">
       <c:forEach items="${st_list}" var="student">
-        <div class="profile">
+        <div class="profile" style="padding:20px">
           <img src="${student.photo}" onerror="this.onerror=null; this.src='assets/profile.png'" alt="" class="round-img">
           <div>
             <h2>${student.name}</h2>
-            <h6>Roll no : ${student.rollno}</h6>
-            <h6>Bio : ${student.bio}</h6>
-            <h6 class="my-1 mb-3"><span>Location : ${student.location}</span></h6>
-            <a class="btn btn-second" href="get_view_profile_data?roll_no=${student.rollno}">View Profile</a>
+            <h6><span style="font-weight:bold">Roll no :</span> ${student.rollno}</h6>
+            <h6><span style="font-weight:bold">Bio :</span> ${student.bio}</h6>
+            <h6 class="my-1 mb-3"><span style="font-weight:bold">Location :</span> ${student.location}</h6>
+            <a class="btn btn-second" href="get_view_profile_data?roll_no=${student.rollno}" style="background-color:#01a1ec">View Profile</a>
           </div>
           <ul>
             <c:forTokens items="${student.skill}" delims="," var="skill">
