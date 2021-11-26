@@ -33,9 +33,10 @@
       </ul>
     </div>
   </nav>
+  <div class="animated-div">
   <div style="display: flex;width: 80%;margin: auto;">
     <div style="flex-direction:row;flex: .5;height: 575px;padding: 15px;">
-      <img src="assets/profileManagement.png" alt="Profile profileManagement" width="100%" height="100%"> 
+      <img src="assets/StudentManagement2.png" alt="Profile profileManagement" width="100%" height="100%" style="border-radius: 20px;"> 
     </div>
     <div style="flex-direction: row;flex: .5;margin-top: 10%;">
       <div class="signUp">
@@ -69,7 +70,20 @@
     </div>
     </div>
   </div>
-
+  </div>
+  <style>
+    @keyframes slideInLeft {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    .animated-div {
+      animation: 1s ease-out 0s 1 slideInLeft;
+    }
+  </style>
   
   <script src="signup.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
